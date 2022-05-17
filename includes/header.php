@@ -45,7 +45,7 @@
                      <!-- If the user is already logged in as admin, it will display logging out, and name of the username -->
                      <?php
                         // not logged in as either captain or admin
-                        if(empty($_SESSION['captainUser']) && if(empty($_SESSION['adminUser'])))
+                        if(empty($_SESSION['captainName']) && if(empty($_SESSION['adminName'])))
                         {
                             echo 
                             '<li class="nav-item">
@@ -56,22 +56,22 @@
                             </li>';
                         }
                         // logged in as admin
-                        else if(!empty($_SESSION['adminUser']))
+                        else if(!empty($_SESSION['adminName']))
                         {
                             echo 
                             '<li class="nav-item">
-                                <a class="nav-link" href="#">' . $_SESSION['adminUser'] . '</a>
+                                <a class="nav-link" href="#">' . $_SESSION['adminName'] . '</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout</a>
                             </li>';
                         }
                         // logged in as captain
-                        else if(!empty($_SESSION['captainUser']))
+                        else if(!empty($_SESSION['captainName']))
                         {
                             echo 
                             '<li class="nav-item">
-                                <a class="nav-link" href="#">' . $_SESSION['captainUser'] . '</a>
+                                <a class="nav-link" href="#">' . $_SESSION['captainName'] . '</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout</a>
