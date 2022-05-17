@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
 
-            <!-- image -->
+            <!-- logo -->
             <img src="./img/logo.png" alt="our logo">
 
             <!-- Redirect to main index -->
@@ -55,12 +55,23 @@
                                 <a class="nav-link" href="captain-login.php">Captain Login</a>
                             </li>';
                         }
-                        // logged in
-                        else
+                        // logged in as admin
+                        else if(!empty($_SESSION['adminUser']))
                         {
                             echo 
                             '<li class="nav-item">
-                                <a class="nav-link" href="#">' . $_SESSION['username'] . '</a>
+                                <a class="nav-link" href="#">' . $_SESSION['adminUser'] . '</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout.php">Logout</a>
+                            </li>';
+                        }
+                        // logged in as captain
+                        else if(!empty($_SESSION['captainUser']))
+                        {
+                            echo 
+                            '<li class="nav-item">
+                                <a class="nav-link" href="#">' . $_SESSION['captainUser'] . '</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout</a>
