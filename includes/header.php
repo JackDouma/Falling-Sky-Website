@@ -58,9 +58,22 @@
                         // logged in as admin
                         else if(!empty($_SESSION['adminName']))
                         {
+                            // in walter white voice "say my name", create player, team, admin, captain, logout. This will be put into seperate drop downs at some point
                             echo 
                             '<li class="nav-item">
                                 <a class="nav-link" href="#">' . $_SESSION['adminName'] . '</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="add-igl-player.php">Create Player</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="add-igl-team.php">Create Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="add-admin.php">Create Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="add-captain.php">Create Captain</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Logout</a>
@@ -69,6 +82,7 @@
                         // logged in as captain
                         else if(!empty($_SESSION['captainName']))
                         {
+                            // in walter white voice "say my name" 2) logout
                             echo 
                             '<li class="nav-item">
                                 <a class="nav-link" href="#">' . $_SESSION['captainName'] . '</a>
