@@ -32,7 +32,7 @@
         }
 
 
-        // if all 3 checks passed
+        // if all pass
         if ($ok)
         {
             // connect sql
