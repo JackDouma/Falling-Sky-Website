@@ -15,7 +15,7 @@
     <!--The start of the merch section. I have space between each section, but if we don't like it, we can remove that.-->
     <div class="section">
         <img src="img\merch.png" id="merch">
-        <a href="https://realgamerwear.net/teams/falling-sky-esports/" id="merchlink">SHOP</a>
+        <a href="https://realgamerwear.net/teams/falling-sky-esports/" id="merchlink" target="_blank">SHOP</a>
         <span class="merch-card">
             <h1>CHECK OUT OUR NEW MERCH!</h1><br>
             <p class="merch-list">Customizable<br><br><br>
