@@ -3,13 +3,20 @@
 
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+        </style>
+
         <title>Falling Sky | <?php echo $title; ?></title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+        
+        <!-- css -->
+        <link rel="stylesheet" href="styles.css">
+        
         <!-- bootstrap -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-
-        <!-- css -->
-        <link type="text/css" rel="stylesheet" href="css/styles.css" />
 
         <!-- java script -->
         <script src="js/scripts.js" type="text/javascript" defer></script>
@@ -29,7 +36,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav"> 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <img id="navimg" src="img\FSE1.png">
+                            <a class="left-links" href="index.php"><b>HOME</b></a>
+                            <a class="left-links" href="about-the-staff.php"><b>STAFF</b></a>
+                            <a class="left-links" href="https://realgamerwear.net/teams/falling-sky-esports/"><b>MERCH</b></a>
+                            <a class="left-links" href="contact.php"><b>CONTACT</b></a>
                         </li>
                        
                         <!-- This php code only adds the registered admins to the header if user if logged in-->
