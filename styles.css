@@ -4,7 +4,7 @@
 .btn-primary, .navbar-dark 
 {
     background-color: #4c057a;
-    height: 100px;
+    height: 125px;
 }
 
 .btn-primary:hover
@@ -14,23 +14,23 @@
 
 body > nav > ul > li > a
 {
-  font-size: 15px;
-  padding: 6px 10px;
-  text-align: center;
-  background-color: #ff0b51;
-  color: #fff;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  text-decoration: none;
-  transition: .5s ease-in-out;
+    font-size: 12px;
+    padding: 4px 7px;
+    text-align: center;
+    background-color: #ff0b51;
+    color: #fff;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    transition: .5s ease-in-out;
 }
 
 body > nav > ul > li > img
 {
     height: 240px;
     width: auto;
-    padding: 0px 5px;
+    padding: 0px 2px;
 }
 
 /********/
@@ -40,8 +40,6 @@ body > nav > ul > li > img
 /* masthead */
 .masthead
 {
-  margin: 0;
-  padding: 0;
     background-image: url('./img/banner.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -178,4 +176,82 @@ body > nav > ul > li > img
 #footer > div > button:hover
 {
     color: #6600c1;
+}
+
+/*********************/
+/* responsive design */
+/*********************/
+@media (orientation: portrait)
+{
+    /* Header */
+    .btn-primary, .navbar-dark 
+    {
+        height: 70px;
+        position: fixed;
+    }
+    body > nav > ul > li > a
+    {
+        font-size: 4px;
+        padding: 1px 2px;
+    }
+    body > nav > ul > li > img
+    {
+        height: 40px;
+    }
+    /* masthead */
+    .masthead
+    {
+        height: 28vh;
+    }
+
+    .masthead > div > div
+    {
+        padding: 5px 10px;
+        align-items: center;
+    }
+    .masthead > div > div > h1
+    {
+        font-size: 20px;
+    }
+    /* index row one */
+    .i-row-one > div
+    {
+        font-size: 15px;
+    }
+
+    .i-row-one > h2
+    {
+        font-size: 30px;
+    }
+
+    /* index row three */
+    .i-row-three > h2
+    {
+        font-size: 30px;
+        text-align: center;
+    }
+    .i-row-three > img
+    {
+        height: 40vh;
+    }
+    .i-row-three > a
+    {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+
+    /* footer */
+    .footer > div > h1
+    {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    }
+
+    .footer > div > p
+    {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    }
 }
