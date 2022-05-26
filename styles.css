@@ -71,7 +71,7 @@ body > nav > ul > li > img
 {
     display: grid;
     align-items: center;
-    background-color:#230b33;
+    background-color:#fff;;
 }
 
 .i-row-one > h2
@@ -99,7 +99,7 @@ body > nav > ul > li > img
   display: grid;
   align-items: center;
   padding: 10% 0%;
-  background-color: #230b33;
+  background-color: #fff;;
 }
 
 .i-row-three > h2
