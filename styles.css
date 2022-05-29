@@ -28,7 +28,7 @@ body > nav > ul > li > a
 
 body > nav > ul > li > img
 {
-    height: 240px;
+    height: 125px;
     width: auto;
     padding: 0px 2px;
 }
@@ -137,13 +137,13 @@ body > nav > ul > li > img
     display: grid;
     column-gap: auto;
     justify-content: center;
-    padding: 2% 0%;
 }
 .s-h2-1 > h2
 {
     font-size: 60px;
     color: #ff0b51;
     text-align: center;
+    text-decoration: underline;
 }
 .s-row-one > div > h3
 {
@@ -212,7 +212,7 @@ body > nav > ul > li > img
     /* Header */
     .btn-primary, .navbar-dark 
     {
-        height: 70px;
+        height: 80px;
         position: fixed;
     }
     body > nav > ul > li > a
@@ -222,7 +222,7 @@ body > nav > ul > li > img
     }
     body > nav > ul > li > img
     {
-        height: 75px;
+        height: 55px;
     }
     /* masthead */
     .i-masthead

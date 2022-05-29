@@ -2,13 +2,13 @@
     $title = 'Staff';
     require 'includes/header.php';
 ?>
-<section class="s-row-one">
+<section class="s-masthead">
     <h1>image header here</h1>
 </section>
 
 <!-- our staff -->
 <section class="s-h2-1">
-    <h2>Our Staff</h2>
+    <h2>Meet The Staff</h2>
 </section>
 <section class="s-row-one">
     <div>
@@ -39,7 +39,7 @@
     <div>
         <h3>JackeyBoy</h3>
         <h5>Dev</h5>
-        <img src="img\logo.png" id="temp">
+        <img src="img\jackeyboy.jpg" id="jackeyboy">
     </div>
     <div>
         <h3>Hakuu</h3>
@@ -47,11 +47,12 @@
         <img src="img\logo.png" id="temp">
     </div>               
 </section>
-
 <!-- our staff -->
-<section class="s-row-two">
+<section class="s-h2-2">
     <h2>Join The Staff here</h2>
-
+</section>
+<section class="s-row-two">
+    
 </section>
 </body>
 <?php
