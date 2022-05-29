@@ -4,11 +4,9 @@
 ?>
 
     <!-- masthead -->
-    <section class="masthead">
+    <section class="i-masthead">
         <div>
-            <div>
-                <h1>Falling Sky Esports</h1>  
-            </div>         
+            
         </div>
     </section>
 
