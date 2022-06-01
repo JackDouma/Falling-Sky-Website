@@ -27,7 +27,6 @@
                     <a class="left-links" href="index.php">Home</a>
                     <a class="left-links" href="rocket-league.php">Teams</a>
                     <a class="left-links" href="staff.php">Staff</a>
-                    <a class="left-links" href="https://realgamerwear.net/teams/falling-sky-esports/" target="_blank">Merch</a>
                     <?php
                         if (session_status() == PHP_SESSION_NONE)
                         {

@@ -37,7 +37,7 @@
 
         <!-- confirm button that also checks to make sure password and confirm is same -->
         <div class="offset-2">
-            <button class="btn btn-primary" onclick="return checkPasswords()">Create</button>
+            <button onclick="return checkPasswords()">Create</button>
         </div>
 
     </form>

@@ -43,7 +43,7 @@
 
         <!-- submit button -->
         <div class="offset-2">
-            <button class="btn btn-primary">Create</button>
+            <button>Create</button>
         </div>
     </form>
 </main>

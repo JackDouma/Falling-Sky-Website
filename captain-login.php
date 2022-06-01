@@ -32,7 +32,7 @@
 
         <!-- login button -->
         <div class="offset-2">
-            <button class="btn btn-primary">Login</button>
+            <button>Login</button>
         </div>
     </form>
 </main>
