@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE)
 }
 
 // check session for admin or captain. If exists, user is logged in
-if($_SESSION['accountId'] != 1 || $_SESSION['accountId'] != 2)
+if($_SESSION['type'] != 1 || $_SESSION['type'] != 2)
 {
     header('location:login.php');
     exit();

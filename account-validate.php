@@ -31,6 +31,7 @@
                 session_start();
                 $_SESSION['name'] = $name;
                 $_SESSION['accountId'] = $account['accountId'];
+                $_SESSION['type'] = $account['type'];
 
                 // send back to home
                 header('location:index.php');  
