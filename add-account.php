@@ -1,26 +1,23 @@
 <!-- get header -->
 <?php
-    $title = 'Captain Create';
+    $title = 'Account Create';
     require 'includes/header.php';
 
     // make sure user is logged in
-    if(empty($_SESSION['adminName']))
-    {
-        header('location:admin-login.php');
-    }
+    require 'includes/admin-auth.php';
 ?>
 
 <main class="container">
-    <h1>Captain Create</h1>
+    <h1>Account Create</h1>
 
     <h6 class="alert alert-secondary" id="message">Password must be a minimum of 8 characters.</h6>
 
-    <form method="post" action="save-captain.php">
+    <form method="post" action="save-account.php">
 
         <!-- username -->
         <fieldset class="m-1">
-            <label for="captainName" class="col-2">Username:</label>
-            <input name="captainName" id="captainName" />
+            <label for="name" class="col-2">Username:</label>
+            <input name="name" id="name" />
         </fieldset>
 
         <!-- password -->
@@ -33,6 +30,14 @@
         <fieldset class="m-1">
             <label for="confirm" class="col-2">Confirm Password:</label>
             <input type="password" name="confirm" id="confirm" required pattern=".{8,}" />
+        </fieldset>
+
+        <fieldset class="m-1">
+            <label for="type" class="col-2">Type:</label>
+            <select id="type" name="type" id="type">
+                <option value="1">Admin</option>
+                <option value="2">Captain</option>
+            </select>
         </fieldset>
 
         <!-- confirm button that also checks to make sure password and confirm is same -->

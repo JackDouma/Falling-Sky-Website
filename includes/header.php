@@ -33,21 +33,20 @@
                             session_start();
                         }
                         // not logged in as either captain or admin
-                        if(empty($_SESSION['captainName']) &&(empty($_SESSION['adminName'])))
+                        if($_SESSION['accountId'] != 1 || $_SESSION['accountId'] != 2)
                         {
                             echo 
-                            '<a class="left-links" href="admin-login.php">Admin Login</a>
-                            <a class="left-links" href="captain-login.php">Captain Login</a>';
+                            '<a class="left-links" href="captain-login.php">Login</a>';
                         }
                         // logged in as admin
-                        else if(!empty($_SESSION['adminName']))
+                        else if($_SESSION['accountId'] == 1)
                         {
                             echo 
                             '<a class="left-links" href="settings.php">Settings</a>                                                                            
                             <a class="left-links" href="logout.php">Logout</a>';
                         }
                         // logged in as captain
-                        else if(!empty($_SESSION['captainName']))
+                        else if($_SESSION['accountId'] == 2)
                         {
                             echo 
                             '<a class="left-links" href="logout.php">Logout</a>';

@@ -2,13 +2,14 @@
     try
     {
         // get header
-        $title = 'Saving Captain...';
+        $title = 'Saving Account...';
         require 'includes/header.php';
 
         // get form inputs
-        $captainName = $_POST['captainName'];
+        $name = $_POST['name'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm'];
+        $type = $_POST['type'];
         $ok = true;
 
         // check if passwords match
@@ -19,7 +20,7 @@
         }
 
         // make sure inputs are not empty
-        if (empty($captainName)) 
+        if (empty($adminName)) 
         {
             echo '<p class="alert alert-info">Username is required.</p>';
             $ok = false;
@@ -31,21 +32,27 @@
             $ok = false;
         }
 
+        if (empty($type)) 
+        {
+            echo '<p class="alert alert-info">Type is required.</p>';
+            $ok = false;
+        }
 
-        // if all 3 checks passed
+
+        // if all pass
         if ($ok)
         {
             // connect sql
             require 'includes/db.php';
 
             // check for any existing usernames
-            $sql = "SELECT * FROM captains WHERE captainName = :captainName";
+            $sql = "SELECT * FROM accounts WHERE name = :name";
             $cmd = $db->prepare($sql);
-            $cmd->bindParam(':captainName', $captainName, PDO::PARAM_STR, 20);
+            $cmd->bindParam(':name', $name, PDO::PARAM_STR, 20);
             $cmd->execute();
-            $captain = $cmd->fetch();
+            $account = $cmd->fetch();
             // if dupe is found
-            if ($captain) 
+            if ($account) 
             {
                 echo '<p class="alert alert-info">Username already exists.</p>';
                 $db = null;
@@ -56,10 +63,11 @@
                 // encrypt password
                 $password = password_hash($password, PASSWORD_DEFAULT);
 
-                // save new captain
-                $sql = "INSERT INTO captains (captainName, password) VALUES (:captainName, :password)";
+                // save new admin
+                $sql = "INSERT INTO accounts (type, name, password) VALUES (:type, :name, :password)";
                 $cmd = $db->prepare($sql);
-                $cmd->bindParam(':captainName', $captainName, PDO::PARAM_STR, 20);
+                $cmd->bindParam(':type', $type, PDO::PARAM_INT);
+                $cmd->bindParam(':name', $name, PDO::PARAM_STR, 20);
                 $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
                 $cmd->execute();
 

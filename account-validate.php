@@ -2,35 +2,35 @@
     try
     {
         // get inputs
-        $adminName = $_POST['adminName'];
+        $name = $_POST['name'];
         $password = $_POST['password'];
 
         // connect sql
         require 'includes/db.php';
 
         // check to see if username matches any in database
-        $sql = "SELECT * FROM admins WHERE adminName = :adminName";
+        $sql = "SELECT * FROM accounts WHERE name = :name";
         $cmd = $db->prepare($sql);
-        $cmd->bindParam(':adminName', $adminName, PDO::PARAM_STR, 20);
+        $cmd->bindParam(':name', $name, PDO::PARAM_STR, 20);
         $cmd->execute();
-        $admin = $cmd->fetch();
+        $account = $cmd->fetch();
 
         // if username is not found
-        if (!$admin)
+        if (!$account)
         {
             $db = null;
-            header('location:admin-login.php?invalid=true'); // send back invalid=true
+            header('location:login.php?invalid=true'); // send back invalid=true
         }
         // if username is found
         else
         {
             // if passwords match
-            if (password_verify($password, $admin['password']))
+            if (password_verify($password, $account['password']))
             {
                 // start session
                 session_start();
-                $_SESSION['adminName'] = $adminName;
-                $_SESSION['adminId'] = $admin['adminId'];
+                $_SESSION['name'] = $name;
+                $_SESSION['accountId'] = $account['accountId'];
 
                 // send back to home
                 header('location:index.php');  
@@ -39,7 +39,7 @@
             else
             {
                 $db = null;
-                header('location:admin-login.php?invalid=true'); // send back invalid=true
+                header('location:login.php?invalid=true'); // send back invalid=true
             }
         }
     }

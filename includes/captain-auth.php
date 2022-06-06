@@ -4,11 +4,9 @@ if (session_status() == PHP_SESSION_NONE)
     session_start();
 }
 
-// an admin can do what a mod can do
-// check session for admin. If exists, user is logged in
-if(empty($_SESSION['captainUser']) && if(empty($_SESSION['adminUser'])))
+// check session for admin or captain. If exists, user is logged in
+if($_SESSION['accountId'] != 1 || $_SESSION['accountId'] != 2)
 {
-    
     header('location:login.php');
     exit();
 }
