@@ -1,5 +1,5 @@
 <?php
-    $title = 'Staff';
+    $title = 'Season';
     require 'includes/header.php';
 
     try

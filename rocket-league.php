@@ -63,7 +63,7 @@
                                 echo 
                                 '<tr>
                                     <td>
-                                        <a href="season.php?seasonId=' . $season['seasonId'] . '">' . $season['seasonName'] . '</a>
+                                        <a href="igl-season.php?seasonId=' . $season['seasonId'] . '">' . $season['seasonName'] . '</a>
                                     </td>
                                 </tr>';
                             }

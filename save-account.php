@@ -20,7 +20,7 @@
         }
 
         // make sure inputs are not empty
-        if (empty($adminName)) 
+        if (empty($name)) 
         {
             echo '<p class="alert alert-info">Username is required.</p>';
             $ok = false;
@@ -63,7 +63,7 @@
                 // encrypt password
                 $password = password_hash($password, PASSWORD_DEFAULT);
 
-                // save new admin
+                // save new account
                 $sql = "INSERT INTO accounts (type, name, password) VALUES (:type, :name, :password)";
                 $cmd = $db->prepare($sql);
                 $cmd->bindParam(':type', $type, PDO::PARAM_INT);

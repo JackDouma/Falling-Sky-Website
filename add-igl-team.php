@@ -2,12 +2,8 @@
 <?php
     $title = 'IGL Team Create';
     require 'includes/header.php';
+    require 'includes/admin-auth.php';
 
-    // make sure user is logged in
-    if(empty($_SESSION['adminName']))
-    {
-        header('location:admin-login.php');
-    }
 ?>
 
 <main class="container">
@@ -18,14 +14,15 @@
         <!-- name -->
         <fieldset class="m-1">
             <label for="teamName" class="col-2">Team Name:</label>
-            <input name="teamName" id="teamName" required maxlength="25" />
+            <input name="teamName" id="teamName" required maxlength="25" value="<?php echo $teamName; ?>" />
         </fieldset>
 
         <!-- mode -->
         <fieldset class="m-1">
             <label for="mode" class="col-2">Gamemode:</label>
             <select name="mode" id="mode">
-            <option value="3v3" selected>3v3</option>
+            <option value="<?php echo $mode; ?>"><?php echo $mode; ?></option>
+            <option value="3v3">3v3</option>
             <option value="2v2">2v2</option>
             <option value="1v1">1v1</option>
             <option value="other">other</option>
@@ -36,7 +33,8 @@
         <fieldset class="m-1">
             <label for="tier" class="col-2">Tier:</label>
             <select name="tier" id="tier">
-            <option value="1" selected>1</option>
+            <option value="<?php echo $tier; ?>"><?php echo $tier; ?></option>
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -51,6 +49,7 @@
             <label for="seasonId" class="col-2">Season:</label>
             <select name="seasonId" id="seasonId">
                 <?php
+                    
                     try 
                     {
                         // this php code will get and show all seasons that have been created
@@ -63,15 +62,8 @@
                         $seasons = $cmd->fetchAll();
 
                         foreach ($seasons as $season) 
-                        {
-                            if ($season['seasonId'] == $seasonId) 
-                            {
-                                echo '<option selected value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';
-                            }
+                        {                                                       
+                            echo '<option value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';                           
                         }
 
                         $db = null;
@@ -101,15 +93,8 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {
-                            if ($player['iglPlayerId'] == $iglPlayerId) 
-                            {
-                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            }
+                        {                          
+                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
                         }
 
                         $db = null;
@@ -139,15 +124,8 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {
-                            if ($player['iglPlayerId'] == $iglPlayerId) 
-                            {
-                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            }
+                        {                          
+                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
                         }
 
                         $db = null;
@@ -177,15 +155,8 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {
-                            if ($player['iglPlayerId'] == $iglPlayerId) 
-                            {
-                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            }
+                        {                          
+                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
                         }
 
                         $db = null;
@@ -215,15 +186,8 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {
-                            if ($player['iglPlayerId'] == $iglPlayerId) 
-                            {
-                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            }
+                        {                          
+                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
                         }
 
                         $db = null;
@@ -253,15 +217,8 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {
-                            if ($player['iglPlayerId'] == $iglPlayerId) 
-                            {
-                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            } 
-                            else 
-                            {
-                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';
-                            }
+                        {                          
+                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
                         }
 
                         $db = null;
