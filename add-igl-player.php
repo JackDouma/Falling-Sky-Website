@@ -36,7 +36,7 @@
                     $tier = $player['tier'];
                     $db = null;
                 }
-                // if webpage not found
+                // if not found
                 else
                 {
                     $db = null;

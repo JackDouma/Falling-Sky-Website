@@ -82,7 +82,7 @@
             require 'includes/db.php';
 
             // check for any existing teams. There can be multipe teams with the same name in different seasons, or modes.
-            $sql = "SELECT * FROM  iglTeams WHERE teamName = :teamName AND mode = :mode AND seasonId = :seasonId";
+            $sql = "SELECT * FROM iglTeams WHERE teamName = :teamName AND mode = :mode AND seasonId = :seasonId";
             $cmd = $db->prepare($sql);
             $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 25);
             $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
@@ -99,9 +99,9 @@
             else
             {
                 // save new team
-                $sql = "INSERT INTO iglPlayers (teamName, mode, tier, seasonId, captain, player1, player2, player3, player4) VALUES (:teamName, :mode, :tier, :seasonId, :captain, :player1, :player2, :player3, :player4)";
+                $sql = "INSERT INTO iglTeams (teamName, mode, tier, seasonId, captain, player1, player2, player3, player4) VALUES (:teamName, :mode, :tier, :seasonId, :captain, :player1, :player2, :player3, :player4)";
                 $cmd = $db->prepare($sql);
-                $cmd->bindParam(':teamName', $teamName PDO::PARAM_STR, 25);
+                $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 25);
                 $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
                 $cmd->bindParam(':tier', $tier, PDO::PARAM_INT);
                 $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
@@ -110,12 +110,6 @@
                 $cmd->bindParam(':player2', $player2, PDO::PARAM_STR, 20);
                 $cmd->bindParam(':player3', $player3, PDO::PARAM_STR, 20);
                 $cmd->bindParam(':player4', $player4, PDO::PARAM_STR, 20);
-
-                // bind Id param only when we have 1 
-                if (!empty($iglTeamId)) 
-                {
-                    $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
-                }
 
                 $cmd->execute();
 

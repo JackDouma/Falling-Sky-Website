@@ -22,7 +22,7 @@
                 // connect sql
                 require 'includes/db.php';
 
-                // get admin table
+                // get table
                 $sql = "SELECT * FROM iglPlayers";
                 $cmd = $db->prepare($sql);
                 $cmd->execute();

@@ -4,6 +4,66 @@
     require 'includes/header.php';
     require 'includes/admin-auth.php';
 
+    try
+    {
+        $iglTeamId = null;
+        $teamName = null;
+        $mode = null;
+        $tier = null;
+        $seasonId = null;
+        $captain = null;
+        $player1 = null;
+        $player2 = null;
+        $player3 = null;
+        $player4 = null;
+        
+        if (isset($_GET['iglTeamId'])) 
+        {
+            if (is_numeric($_GET['iglTeamId'])) 
+            {
+                $iglTeamId = $_GET['iglTeamId'];
+
+                // connect sql
+                require 'includes/db.php';
+
+                // run sql command and get webpage details
+                $sql = "SELECT * FROM iglTeams WHERE iglTeamId = :iglTeamId";
+                $cmd = $db->prepare($sql);
+                $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
+                $cmd->execute();
+                $team = $cmd->fetch(); 
+
+                // if team found, get values
+                if (!empty($team))
+                {
+                    $iglTeamId = $team['iglTeamId'];
+                    $teamName = $team['teamName'];
+                    $mode = $team['mode'];
+                    $tier = $team['tier'];
+                    $seasonId = $team['seasonId'];
+                    $captain = $team['captain'];
+                    $player1 = $team['player1'];
+                    $player2 = $team['player2'];
+                    $player3 = $team['player3'];
+                    $player4 = $team['player4'];
+
+                    $db = null;
+                }
+                // if not found
+                else
+                {
+                    $db = null;
+                    header('location:error.php');
+                    exit();
+                }
+            }
+        }
+    }
+    // if site is unable to load
+    catch (Exception $error)
+    {
+        header('location:error.php');
+    }
 ?>
 
 <main class="container">
@@ -60,6 +120,14 @@
                         $cmd = $db->prepare($sql);
                         $cmd->execute();
                         $seasons = $cmd->fetchAll();
+                        if (empty($seasonId))
+                        {
+                            echo '<option value=""></option>';
+                        }
+                        else
+                        {
+                            echo '<option value="' . $seasonId . '">Original</option>';
+                        }
 
                         foreach ($seasons as $season) 
                         {                                                       
@@ -80,6 +148,7 @@
         <fieldset class="m-1">
             <label for="captain" class="col-2">Captain:</label>
             <select name="captain" id="captain">
+                <option value="<?php echo $captain; ?>"><?php echo $captain; ?></option>
                 <?php
                     try 
                     {
@@ -111,6 +180,7 @@
         <fieldset class="m-1">
             <label for="player1" class="col-2">Player 1 (optional):</label>
             <select name="player1" id="player1">
+                <option value="<?php echo $player1; ?>"><?php echo $player1; ?></option>
                 <?php
                     try 
                     {
@@ -142,6 +212,7 @@
         <fieldset class="m-1">
             <label for="player2" class="col-2">Player 2 (optional):</label>
             <select name="player2" id="player2">
+                <option value="<?php echo $player2; ?>"><?php echo $player2; ?></option>
                 <?php
                     try 
                     {
@@ -173,6 +244,7 @@
         <fieldset class="m-1">
             <label for="player3" class="col-2">Player 3 (optional):</label>
             <select name="player3" id="player3">
+            <option value="<?php echo $player3; ?>"><?php echo $player3; ?></option>
                 <?php
                     try 
                     {
@@ -204,6 +276,7 @@
         <fieldset class="m-1">
             <label for="player4" class="col-2">Player 4 (optional):</label>
             <select name="player4" id="player4">
+            <option value="<?php echo $player4; ?>"><?php echo $player4; ?></option>
                 <?php
                     try 
                     {
@@ -233,7 +306,7 @@
 
         <!-- submit button -->
         <div class="offset-2">
-            <button>Create</button>
+            <button>Save</button>
         </div>
     </form>
 </main>
