@@ -63,8 +63,9 @@
                     // disconnect from sql
                     $db = null;
 
-                    // redirect to home page
-                    header('location:index.php');
+                    echo '<div class="alert alert-info">Player Created.  
+                        <a href="igl-players.php">To Player List</a>
+                    </div>';
                 }
             }
             //// edit player ////
@@ -96,7 +97,7 @@
 
                     $db = null;
 
-                    echo '<div class="alert alert-info">Player saved.  
+                    echo '<div class="alert alert-info">Player Saved.  
                         <a href="igl-players.php">Return to Player List</a>
                     </div>';
                 }

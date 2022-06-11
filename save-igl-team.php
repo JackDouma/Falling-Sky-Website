@@ -6,6 +6,7 @@
         require 'includes/header.php';
 
         // get form inputs
+        $iglTeamId = $_POST['iglTeamId'];
         $teamName = $_POST['teamName'];
         $mode = $_POST['mode'];
         $tier = $_POST['tier'];
@@ -81,43 +82,89 @@
             // connect sql
             require 'includes/db.php';
 
-            // check for any existing teams. There can be multipe teams with the same name in different seasons, or modes.
-            $sql = "SELECT * FROM iglTeams WHERE teamName = :teamName AND mode = :mode AND seasonId = :seasonId";
-            $cmd = $db->prepare($sql);
-            $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 25);
-            $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
-            $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
-            $cmd->execute();
-            $team = $cmd->fetch();
-            // if dupe is found
-            if ($team) 
+            //// new team ////
+            if (empty($iglTeamId))
             {
-                echo '<p class="alert alert-info">Team already exists.</p>';
-                $db = null;
-            }
-            // if no dupe is found
-            else
-            {
-                // save new team
-                $sql = "INSERT INTO iglTeams (teamName, mode, tier, seasonId, captain, player1, player2, player3, player4) VALUES (:teamName, :mode, :tier, :seasonId, :captain, :player1, :player2, :player3, :player4)";
+                // check for any existing teams. There can be multipe teams with the same name in different seasons, or modes.
+                $sql = "SELECT * FROM iglTeams WHERE teamName = :teamName AND mode = :mode AND seasonId = :seasonId";
                 $cmd = $db->prepare($sql);
                 $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 25);
                 $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
-                $cmd->bindParam(':tier', $tier, PDO::PARAM_INT);
                 $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
-                $cmd->bindParam(':captain', $captain, PDO::PARAM_STR, 20);
-                $cmd->bindParam(':player1', $player1, PDO::PARAM_STR, 20);
-                $cmd->bindParam(':player2', $player2, PDO::PARAM_STR, 20);
-                $cmd->bindParam(':player3', $player3, PDO::PARAM_STR, 20);
-                $cmd->bindParam(':player4', $player4, PDO::PARAM_STR, 20);
-
                 $cmd->execute();
+                $team = $cmd->fetch();
+                // if dupe is found
+                if ($team) 
+                {
+                    echo '<p class="alert alert-info">Team already exists.</p>';
+                    $db = null;
+                }
+                // if no dupe is found
+                else
+                {
+                    // save new team
+                    $sql = "INSERT INTO iglTeams (teamName, mode, tier, seasonId, captain, player1, player2, player3, player4) VALUES (:teamName, :mode, :tier, :seasonId, :captain, :player1, :player2, :player3, :player4)";
+                    $cmd = $db->prepare($sql);
+                    $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 25);
+                    $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
+                    $cmd->bindParam(':tier', $tier, PDO::PARAM_INT);
+                    $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
+                    $cmd->bindParam(':captain', $captain, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player1', $player1, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player2', $player2, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player3', $player3, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player4', $player4, PDO::PARAM_STR, 20);
 
-                // disconnect from sql
-                $db = null;
+                    $cmd->execute();
 
-                // redirect to home page
-                header('location:index.php');
+                    // disconnect from sql
+                    $db = null;
+
+                    echo '<div class="alert alert-info">Team Created.  
+                        <a href="igl-teams.php">To Team List</a>
+                    </div>';
+                }
+            }
+            //// edit team ////
+            else
+            {
+                // check for id
+                $sql = "SELECT * FROM iglTeams WHERE iglTeamId = :iglTeamId";
+                $cmd = $db->prepare($sql);
+                $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
+                $cmd->execute();
+                $team = $cmd->fetch();
+                
+                // if team found
+                if($team)
+                {
+                    // sql update command
+                    $sql = "UPDATE iglTeams SET teamName = :teamName, mode = :mode, tier = :tier, seasonId = :seasonId, captain = :captain, player1 = :player1, player2 = :player2, player3 = :player3, player4 = :player4 WHERE iglTeamId = :iglTeamId";
+                    $cmd = $db->prepare($sql);
+                    $cmd->bindParam(':teamName', $teamName, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
+                    $cmd->bindParam(':tier', $tier, PDO::PARAM_INT);
+                    $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
+                    $cmd->bindParam(':captain', $captain, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player1', $player1, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player2', $player2, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player3', $player3, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':player4', $player4, PDO::PARAM_STR, 20);
+                    
+
+                    if (!empty($iglTeamId)) 
+                    {
+                        $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
+                    }
+
+                    $cmd->execute();
+
+                    $db = null;
+
+                    echo '<div class="alert alert-info">Team Saved.  
+                        <a href="igl-teams.php">Return to Player List</a>
+                    </div>';
+                }
             }
         }
     }

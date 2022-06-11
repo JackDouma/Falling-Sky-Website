@@ -108,8 +108,8 @@
         <fieldset class="m-1">
             <label for="seasonId" class="col-2">Season:</label>
             <select name="seasonId" id="seasonId">
+                <option value=""></option>
                 <?php
-                    
                     try 
                     {
                         // this php code will get and show all seasons that have been created
@@ -120,18 +120,17 @@
                         $cmd = $db->prepare($sql);
                         $cmd->execute();
                         $seasons = $cmd->fetchAll();
-                        if (empty($seasonId))
-                        {
-                            echo '<option value=""></option>';
-                        }
-                        else
-                        {
-                            echo '<option value="' . $seasonId . '">Original</option>';
-                        }
 
                         foreach ($seasons as $season) 
-                        {                                                       
-                            echo '<option value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';                           
+                        {          
+                            if ($seasonId == $season['seasonId'])
+                            {
+                                echo '<option selected value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';    
+                            }   
+                            else
+                            {
+                                echo '<option value="' . $season['seasonId'] . '">' . $season['seasonName'] . '</option>';    
+                            }                                                                    
                         }
 
                         $db = null;
@@ -148,7 +147,7 @@
         <fieldset class="m-1">
             <label for="captain" class="col-2">Captain:</label>
             <select name="captain" id="captain">
-                <option value="<?php echo $captain; ?>"><?php echo $captain; ?></option>
+                <option value=""></option>
                 <?php
                     try 
                     {
@@ -162,8 +161,15 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {                          
-                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
+                        {         
+                            if ($captain == $player['iglPlayerId'])   
+                            {
+                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }     
+                            else
+                            {
+                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }            
                         }
 
                         $db = null;
@@ -180,7 +186,7 @@
         <fieldset class="m-1">
             <label for="player1" class="col-2">Player 1 (optional):</label>
             <select name="player1" id="player1">
-                <option value="<?php echo $player1; ?>"><?php echo $player1; ?></option>
+                <option value=""></option>
                 <?php
                     try 
                     {
@@ -194,8 +200,15 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {                          
-                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
+                        {         
+                            if ($player1 == $player['iglPlayerId'])   
+                            {
+                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }     
+                            else
+                            {
+                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }            
                         }
 
                         $db = null;
@@ -212,7 +225,7 @@
         <fieldset class="m-1">
             <label for="player2" class="col-2">Player 2 (optional):</label>
             <select name="player2" id="player2">
-                <option value="<?php echo $player2; ?>"><?php echo $player2; ?></option>
+                <option value=""></option>
                 <?php
                     try 
                     {
@@ -226,8 +239,15 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {                          
-                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
+                        {         
+                            if ($player2 == $player['iglPlayerId'])   
+                            {
+                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }     
+                            else
+                            {
+                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }            
                         }
 
                         $db = null;
@@ -244,7 +264,7 @@
         <fieldset class="m-1">
             <label for="player3" class="col-2">Player 3 (optional):</label>
             <select name="player3" id="player3">
-            <option value="<?php echo $player3; ?>"><?php echo $player3; ?></option>
+                <option value=""></option>
                 <?php
                     try 
                     {
@@ -258,8 +278,15 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {                          
-                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
+                        {         
+                            if ($player3 == $player['iglPlayerId'])   
+                            {
+                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }     
+                            else
+                            {
+                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }            
                         }
 
                         $db = null;
@@ -276,7 +303,7 @@
         <fieldset class="m-1">
             <label for="player4" class="col-2">Player 4 (optional):</label>
             <select name="player4" id="player4">
-            <option value="<?php echo $player4; ?>"><?php echo $player4; ?></option>
+                <option value=""></option>
                 <?php
                     try 
                     {
@@ -290,8 +317,15 @@
                         $players = $cmd->fetchAll();
 
                         foreach ($players as $player) 
-                        {                          
-                            echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>';    
+                        {         
+                            if ($player4 == $player['iglPlayerId'])   
+                            {
+                                echo '<option selected value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }     
+                            else
+                            {
+                                echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
+                            }            
                         }
 
                         $db = null;
@@ -306,6 +340,7 @@
 
         <!-- submit button -->
         <div class="offset-2">
+            <input type="hidden" name="iglTeamId" id="iglTeamId" value="<?php echo $iglTeamId; ?>" />
             <button>Save</button>
         </div>
     </form>
