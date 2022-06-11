@@ -10,6 +10,7 @@
 <a class="nav-link" href="igl-teams.php">View Teams</a>
 <a class="nav-link" href="add-igl-season.php">Create Season</a>
 <a class="nav-link" href="add-account.php">Create Account</a>
+<a class="nav-link" href="accounts.php">View Accounts</a>
 
 </body>
 <?php
