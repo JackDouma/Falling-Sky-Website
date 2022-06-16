@@ -42,7 +42,7 @@
                                 echo '<th>Team</th>';
                                 echo '<th>Mode</th>';
                                 echo '<th>Tier</th>';
-                                echo '<th>View</th>';
+                                echo '<th>Team Page</th>';
                             echo '</tr>';
                         echo '</thead>';
                         echo '<tbody>';                                                               

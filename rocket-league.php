@@ -10,10 +10,10 @@
         </div>
     </section>
 
-    <!-- section 1 - main roster -->
+    <!-- section 1 - main roster 
     <section class="rh-h2-1">
         <h2>Main Roster</h2>
-    </section>
+    </section> 
 
     <section class="rh-row-one">
         <div>
@@ -28,7 +28,7 @@
             <h3>Temp</h3>
             <img src="img\logo.png" id="temp">
         </div>                
-    </section>
+    </section> -->
 
 
     <!-- section 2 - IGL -->

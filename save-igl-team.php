@@ -109,11 +109,11 @@
                     $cmd->bindParam(':mode', $mode, PDO::PARAM_STR, 10);
                     $cmd->bindParam(':tier', $tier, PDO::PARAM_INT);
                     $cmd->bindParam(':seasonId', $seasonId, PDO::PARAM_INT);
-                    $cmd->bindParam(':captain', $captain, PDO::PARAM_STR, 20);
-                    $cmd->bindParam(':player1', $player1, PDO::PARAM_STR, 20);
-                    $cmd->bindParam(':player2', $player2, PDO::PARAM_STR, 20);
-                    $cmd->bindParam(':player3', $player3, PDO::PARAM_STR, 20);
-                    $cmd->bindParam(':player4', $player4, PDO::PARAM_STR, 20);
+                    $cmd->bindParam(':captain', $captain, PDO::PARAM_INT);
+                    $cmd->bindParam(':player1', $player1, PDO::PARAM_INT);
+                    $cmd->bindParam(':player2', $player2, PDO::PARAM_INT);
+                    $cmd->bindParam(':player3', $player3, PDO::PARAM_INT);
+                    $cmd->bindParam(':player4', $player4, PDO::PARAM_INT);
 
                     $cmd->execute();
 

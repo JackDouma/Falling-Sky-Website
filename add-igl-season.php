@@ -8,6 +8,8 @@
 <main class="container">
     <h1>Create IGL Season</h1>
 
+    <div class="alert alert-danger"> --> WARNING! This cannot be undone. <--</div>
+
     <form method="post" action="save-igl-season.php">
 
         <!-- name -->
