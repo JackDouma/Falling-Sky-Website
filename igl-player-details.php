@@ -86,12 +86,12 @@
         </div>
         <div>
             <h5>
-                <?php echo 'Wins: ' . $seriesWins; ?>
+                <?php echo 'Wins: ' . $wins; ?>
             </h5>
         </div>
         <div>
             <h5>
-                <?php echo 'Losses: ' . $seriesLosses; ?>
+                <?php echo 'Losses: ' . $losses; ?>
             </h5>
         </div>
     </section>

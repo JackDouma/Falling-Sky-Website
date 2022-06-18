@@ -183,6 +183,21 @@
             </div>
         </div>            
     </section>
+    <!-- section 2 - edit -->
+    <section class="td-row-two">
+        <?php
+            if (session_status() == PHP_SESSION_NONE)
+            {
+                session_start();
+            }
+            
+            // check session for admin
+            if($_SESSION['type'] == 1)
+            {
+                echo '<a href="edit-record.php?iglTeamId=' . $iglTeamId . '">Edit Record</a>';
+            }
+        ?>
+    </section>
 </body>
 <?php
     require 'includes/footer.php';

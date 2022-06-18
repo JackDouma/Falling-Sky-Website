@@ -33,7 +33,7 @@ button:hover
 .btn-primary, .navbar-dark 
 {
     background-color: #4c057a;
-    height: 150px;
+    height: 130px;
 }
 
 .navbar-dark > ul > li > a:hover
@@ -44,6 +44,7 @@ button:hover
 body > nav > ul > li > a
 {
     font-size: 40px;
+    vertical-align: middle;
     padding: 0px 8px;
     text-align: center;
     color: #ff0b51;
@@ -56,7 +57,7 @@ body > nav > ul > li > a
 
 body > nav > ul > li > img
 {
-    height: 100px;
+    height: 125px;
     width: auto;
     padding: 0px 2px;
 }
