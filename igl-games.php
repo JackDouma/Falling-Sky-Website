@@ -23,9 +23,6 @@
     </thead>
     <tbody>
         <?php
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
             try
             {
                 // connect sql
@@ -50,12 +47,12 @@
                 // loops through data and creates table
                 foreach (array_reverse($seasons) as $season)
                 {   
-                    foreach ($teams as $team)
+                    foreach (array_reverse($teams) as $team)
                     {     
                         // if season == team season is playing in
                         if ($team['seasonId'] == $season['seasonId'])
                         {     
-                            foreach ($games as $game)
+                            foreach (array_reverse($games) as $game)
                             {                                
                                 // if team == team with a match
                                 if ($team['iglTeamId'] == $game['iglTeamId'])
@@ -71,14 +68,12 @@
                                         if (!empty($game['stream']))
                                         {
                                             echo '<td>
-                                                <a href="' . $game['stream'] . '" class="btn btn-secondary"
-                                                    Stream Link
-                                                </a>
+                                                <a href="' . $game['stream'] . '" class="btn btn-info" id="stream link" target="_blank">Stream Link</a>
                                             </td>';
                                         }
                                         else
                                         {
-                                            echo '<td>No Stream</td>';
+                                            echo '<td>No Stream :(</td>';
                                         }
 
                                         if ($game['gameWins'] > 0 || $game['gameLosses'] > 0)
