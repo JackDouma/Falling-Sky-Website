@@ -4,6 +4,7 @@
         // get header
         $title = 'Saving IGL Team...';
         require 'includes/header.php';
+        require 'includes/admin-auth.php';
 
         // get form inputs
         $iglTeamId = $_POST['iglTeamId'];

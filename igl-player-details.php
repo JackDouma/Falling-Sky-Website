@@ -53,6 +53,8 @@
                         }
                     }
                     $db = null;
+
+                    $winrate = round($wins / ($wins + $losses) * 100);
                 }
                 // if not found
                 else
@@ -92,6 +94,11 @@
         <div>
             <h5>
                 <?php echo 'Losses: ' . $losses; ?>
+            </h5>
+        </div>
+        <div>
+            <h5>
+                <?php echo 'Winrate: ' . $winrate . '%'; ?>
             </h5>
         </div>
     </section>

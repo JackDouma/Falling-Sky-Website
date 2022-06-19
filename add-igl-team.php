@@ -1,4 +1,3 @@
-<!-- get header -->
 <?php
     $title = 'IGL Team Create';
     require 'includes/header.php';

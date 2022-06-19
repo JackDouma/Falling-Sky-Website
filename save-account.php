@@ -4,6 +4,7 @@
         // get header
         $title = 'Saving Account...';
         require 'includes/header.php';
+        require 'includes/admin-auth.php';
 
         // get form inputs
         $name = $_POST['name'];

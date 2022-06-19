@@ -1,4 +1,3 @@
-<!-- get header -->
 <?php
     $title = 'IGL Player Create';
     require 'includes/header.php';
