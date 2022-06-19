@@ -3,6 +3,7 @@
     require 'includes/header.php';
     require 'includes/admin-auth.php';
 ?>
+<a class="nav-link" href="edit-current-week.php?weekId=1">Edit Current Week</a>
 <a class="nav-link" href="add-igl-game.php">Add IGL Game</a>
 <a class="nav-link" href="igl-games.php">Edit IGL Game</a>
 <a class="nav-link" href="add-igl-player.php">Create Player</a>
