@@ -52,6 +52,13 @@
                 }
             }
         }
+        if (isset($_GET['iglTeamId'])) 
+        {
+            if (is_numeric($_GET['iglTeamId'])) 
+            {
+                $iglTeamId = $_GET['iglTeamId'];
+            }
+        }
     }
     // if site is unable to load
     catch (Exception $error)

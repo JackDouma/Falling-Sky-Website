@@ -25,7 +25,7 @@
 
     <!-- section 2 - schedule -->
     <section class="i-row-two">
-    <h1 class="container text-center">IGL Game List</h1>
+    <h2 class="container text-center">IGL Game List</h1>
 
     <table class="table table-striped">
         <thead>
@@ -41,9 +41,6 @@
         </thead>
         <tbody>
             <?php
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
                 try
                 {
                     // connect sql

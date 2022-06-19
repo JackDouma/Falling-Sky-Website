@@ -192,9 +192,10 @@
             }
             
             // check session for admin
-            if($_SESSION['type'] == 1)
+            if($_SESSION['type'] == 1 || $_SESSION['type'] == 2)
             {
                 echo '<a href="edit-record.php?iglTeamId=' . $iglTeamId . '">Edit Record</a>';
+                echo '<a href="add-igl-game.php?iglTeamId=' . $iglTeamId . '">Add Game</a>';
             }
         ?>
     </section>
