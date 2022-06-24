@@ -127,53 +127,6 @@ body > nav > ul > li > img
     margin-right: auto;
 }
 
-/* row three */
-.i-row-three
-{
-  display: grid;
-  align-items: center;
-  padding: 10% 0%;
-  background-color: #fff;;
-}
-
-.i-row-three > h2
-{
-    font-size: 60px;
-    color: #ff0b51;
-    display: block;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.i-row-three > img
-{
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.i-row-three > a
-{
-    font-size: 40px;
-    padding: 30px 50px;
-    text-align: center;
-    background-color: #ff0b51;
-    color: #fff;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-decoration: none;
-    transition: .5s ease-in-out;
-}
-
-.i-row-three > a:hover
-{
-    background-color: #B90E0A
-}
 /*************/
 /*   staff   */
 /*************/
@@ -239,54 +192,26 @@ body > nav > ul > li > img
     color:#ff0b51;
 }
 
-/* row three */
-.s-row-three > h3
+/* row one */
+.s-row-three
 {
-    font-size: 50px;
+    grid-template-columns: repeat(2, 50%);
+    display: grid;
+    column-gap: auto;
+    justify-content: center;
+}
+.s-row-three > div > h3
+{
+    font-size: 40px;
     color: #ff0b51;
     text-align: center;
-}
-.s-row-three > div
-{
-    width: 500px;
-    border: 15px solid #ff0b51;
-    background-color: #240d30;
-    padding: 30px;
-    margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
 }
 .s-row-three > div > h6
 {
-    font-size: 30px;
-    color:#ff0b51;
-    text-align: center;
-}
-
-/* row four */
-.s-row-four > h3
-{
-    font-size: 50px;
+    font-size: 25px;
     color: #ff0b51;
     text-align: center;
-}
-
-.s-row-four > form > div > button
-{
-    font-size: 20px;
-    padding: 3px 5px;
-    text-align: center;
-    background-color: #4169e1;
-    color: #fff;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-decoration: none;
-    transition: .5s ease-in-out;
-}
-.s-row-four > form > div > button:hover
-{
-    background-color: #000080;
+    font-style: italic;
 }
 
 
@@ -295,35 +220,73 @@ body > nav > ul > li > img
 /**************/
 .footer
 {
-  grid-area: footer;
-  display: grid;
-  grid-template-rows: auto;
-  align-items: center;
-  background-color: #4c057a;
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    background-color: #4c057a;
 }
-.footer > div > h1
+.footer > img
 {
-  color: #fff;
-  text-align: center;
-  font-size: 40px;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: auto;
+    padding: 20px 2px;
 }
-
-.footer > div > p
+.footer > p
 {
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
+    color: #ff0b51;
+    text-align: center;
+    font-size: 24px;
+}
+.footer > div
+{
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer > div > a
+{
+    padding: 0px 2px;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+.footer > div > a > img
+{
+    height: 30px;
+    width: auto;
+    padding: 0px 2px;
 }
 /*********************/
 /*   rocket league   */
 /*********************/
 
-.rh-h2-2 > h2
+.rh-title > h2
 {
     font-size: 50px;
     color: #ff0b51;
     text-align: center;
     font-weight: bold;
+}
+.rh-title > div
+{
+    width: 750px;
+    border: 15px solid #ff0b51;
+    background-color: #240d30;
+    padding: 50px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rh-title > div > p
+{
+    color:#ff0b51;
 }
 
 /********************/
@@ -443,12 +406,12 @@ body > nav > ul > li > img
     }
     body > nav > ul > li > a
     {
-        font-size: 22px;
+        font-size: 16px;
         padding: 0px 3px;
     }
     body > nav > ul > li > img
     {
-        height: 70px;
+        height: 50px;
     }
     /* masthead */
     .i-masthead
@@ -473,20 +436,6 @@ body > nav > ul > li > img
         font-size: 30px;
     }
 
-    /* index row three */
-    .i-row-three > h2
-    {
-        font-size: 30px;
-    }
-    .i-row-three > img
-    {
-        height: 35vh;
-    }
-    .i-row-three > a
-    {
-        font-size: 20px;
-        padding: 5px 10px;
-    }
     /* staff row one */
     .s-row-one
     {
@@ -544,6 +493,21 @@ body > nav > ul > li > img
     {
         font-size: 16px;
         padding: 1px 3px;
+    }
+
+    /* rocket league titles */
+    .rh-title > h2 
+    {
+        font-size: 30px;
+    }
+    .rh-title > div
+    {
+        width: 350px;
+        padding: 25px;
+    }
+    .rh-title > div > p
+    {
+        font-size: 16px;
     }
     /* footer */
     .footer > div > h1
