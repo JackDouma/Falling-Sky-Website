@@ -58,13 +58,13 @@
             $ok = false;
         }
 
-        if (!empty($player1) && $player1 == $player2 || $player1 == $player3 || $player1 == $player4)
+        if (!empty($player1) && ($player1 == $player2 || $player1 == $player3 || $player1 == $player4))
         {
             echo '<p class="alert alert-info">You cannot select the same player more than once.</p>';
             $ok = false;
         }
 
-        if (!empty($player2) && $player2 == $player3 || $player2 == $player4)
+        if (!empty($player2) && ($player2 == $player3 || $player2 == $player4))
         {
             echo '<p class="alert alert-info">You cannot select the same player more than once.</p>';
             $ok = false;
