@@ -1,7 +1,12 @@
 <?php
     $title = 'Season';
     require 'includes/header.php';
-
+?>
+<section class="h2">
+    <div>
+        <h2>Teams</h2>
+    </div>
+<?php
     try
     {
         if (isset($_GET['seasonId'])) 
@@ -30,13 +35,11 @@
             $cmd->execute();
             $teams = $cmd->fetchAll();
 
-            echo '<section class="rs-h2-1">';
-                echo '<h2>Teams</h2>';
-            echo '</section>';
+            
 
-            echo '<section class="rh-row-two">';
+            echo '<section class="table">';
                 echo '<div>';
-                    echo '<table class="table table-striped">';
+                    echo '<table>';
                         echo '<thead>';
                             echo '<tr>';
                                 echo '<th>Team</th>';

@@ -2,14 +2,21 @@
     $title = 'Staff';
     require 'includes/header.php';
 ?>
-<section class="s-masthead">
-    <h1>image header here</h1>
+<!-- masthead -->
+<section class="masthead">
+    <div>
+        <h1>STAFF</h1>
+    </div>
 </section>
 
+<div class="new-section"></div>
+
 <!-- our staff -->
-<section class="s-h2-1">
-    <h2>Meet The Staff</h2>
-</section>
+<section class="h2">
+    <div>
+        <h2>Meet The Staff</h2>
+    </div>
+
 <section class="s-row-one">
     <div>
         <h3>Ren</h3>
@@ -22,12 +29,7 @@
         <img src="img\star.png" id="temp">
     </div> 
     <div>
-        <h3>Nate</h3>
-        <h5>Admin</h5>
-        <img src="img\star.png" id="temp">
-    </div>  
-    <div>
-        <h3>Noxxi</h3>
+        <h3>Fion3il</h3>
         <h5>Admin</h5>
         <img src="img\star.png" id="temp">
     </div>  
@@ -48,20 +50,21 @@
     </div>               
 </section>
 
-<!-- join the staff -->
-<section class="s-h2-2">
-    <h2>Join The Staff</h2>
-</section>
+<div class="new-section"></div>
 
-<section class="s-row-two">
+<!-- join the staff -->
+<section class="textbox">
+    <h2>Join The Staff</h2>
     <div>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     </div>
 </section>
 
-<!-- aaply -->
-<section class="s-h2-2">
-    <h2>Apply</h2>
+<!-- apply -->
+<section class="h2">
+    <div>
+        <h2>Apply</h2>
+    </div>
 </section>
 
 <section class="s-row-three">

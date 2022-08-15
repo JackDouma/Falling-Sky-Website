@@ -109,7 +109,7 @@
                     $db = null;
                     
                     echo '<div class="alert alert-info">Game Created.  
-                        <a href="index.php">To Home</a>
+                        <a href="igl-team-details.php?iglTeamId='. $iglTeamId . '">To Team Page</a>
                     </div>';
                 }
             }

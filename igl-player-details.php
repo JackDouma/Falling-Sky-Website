@@ -80,26 +80,28 @@
 
     <!-- section 1 - player info -->
     <section class="pd-row-one">
-        <h3>Player Info</h3>
         <div>
-            <h5>
-                <?php echo 'Tier: ' . $tier; ?>
-            </h5>
-        </div>
-        <div>
-            <h5>
-                <?php echo 'Wins: ' . $wins; ?>
-            </h5>
-        </div>
-        <div>
-            <h5>
-                <?php echo 'Losses: ' . $losses; ?>
-            </h5>
-        </div>
-        <div>
-            <h5>
-                <?php echo 'Winrate: ' . $winrate . '%'; ?>
-            </h5>
+            <h3>Player Info</h3>
+            <div>
+                <h5>
+                    <?php echo 'Tier: ' . $tier; ?>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <?php echo 'Wins: ' . $wins; ?>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <?php echo 'Losses: ' . $losses; ?>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <?php echo 'Winrate: ' . $winrate . '%'; ?>
+                </h5>
+            </div>
         </div>
     </section>
 

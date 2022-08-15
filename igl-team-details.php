@@ -71,7 +71,9 @@
 ?>
 
     <section class="td-title">
-        <h1><?php echo $teamName; ?></h1>
+        <div>
+            <h1><?php echo $teamName; ?></h1>
+        </div>
     </section>
     <!-- section 1 - players -->
     <section class="td-row-one">
@@ -183,8 +185,245 @@
             </div>
         </div>            
     </section>
-    <!-- section 2 - edit -->
-    <section class="td-row-two">
+
+    <section class="td-title">
+        <div>
+            <h2>Schedule</h2>
+        </div>
+    </section>
+
+    <!-- section 2 - schedule-->
+    <section class="td-row-one">
+        <div>
+            <h3>Season</h3>
+
+            <?php
+                try 
+                {
+                    // this php code will get and show all games that have been created
+                    require 'includes/db.php';
+
+                    $sql = "SELECT * FROM iglSchedule";
+                    $cmd = $db->prepare($sql);
+                    $cmd->execute();
+                    $games = $cmd->fetchAll();
+
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '1')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 1</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '2')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 2</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '3')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 3</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '4')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 4</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '5')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 5</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '6')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Week 6</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }
+                    $db = null;
+                }
+                catch (Exception $error) 
+                {
+                    header('location:error.php');
+                }
+            ?>  
+        </div> 
+        <div>
+            <h3>Playoffs</h3>
+
+            <?php
+                try 
+                {
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '7')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Round of 16</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }  
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '8')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Quarter Finals</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    } 
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '9')
+                            {
+                                echo '<div>';
+                                    echo '<h5>Semi Finals</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+
+                                // determine if there's a 3rd place or 1st place match
+                                if ($game['gameWins'] > $game['gameLosses'])
+                                {
+                                    $lastmatch = 'Finals';
+                                }
+                                else
+                                {
+                                    $lastmatch = 'Bronze Match';
+                                }
+                            }
+                        }
+                    } 
+                    foreach ($games as $game) 
+                    {         
+                        if ($iglTeamId == $game['iglTeamId'])   
+                        {
+                            if ($game['week'] == '10')
+                            {
+                                echo '<div>';
+                                    echo '<h5>'. $lastmatch .'</h5>';
+                                    echo '<h6>';
+                                        echo $teamName . ' VS ' . $game['opponent'];
+                                    echo '</h6>';
+                                    echo '<h6>';
+                                        echo $game['gameWins'] . '-' . $game['gameLosses'];
+                                    echo '</h6>';
+                                echo '</div>';
+                            }
+                        }
+                    }                                                                                                  
+                    $db = null;
+                }
+                catch (Exception $error) 
+                {
+                    header('location:error.php');
+                }
+            ?>  
+        </div>          
+    </section>
+    
+    <!-- section 3 - edit -->
+    <section class="td-row-three">
         <?php
             if (session_status() == PHP_SESSION_NONE)
             {

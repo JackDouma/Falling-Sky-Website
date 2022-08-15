@@ -4,14 +4,16 @@
 ?>
 
     <!-- masthead -->
-    <section class="i-masthead">
+    <section class="masthead">
         <div>
-            
+            <h1>FALLING SKY ESPORTS</h1>
         </div>
     </section>
 
+    <div class="new-section"></div>
+
     <!-- section 1 - about -->
-    <section class="i-row-one">
+    <section class="textbox">
         <h2>About Us</h2>
 
         <div>
@@ -23,8 +25,10 @@
         </div>           
     </section>
 
-    <!-- section 1 - how to join-->
-    <section class="i-row-one">
+    <div class="new-section"></div>
+
+    <!-- section 2 - how to join-->
+    <section class="textbox">
         <h2>How To Join</h2>
 
         <div>
@@ -32,114 +36,117 @@
         </div>           
     </section>
 
-    <!-- section 2 - schedule -->
-    <section class="i-row-two">
-    <h2 class="container text-center">IGL Game List</h1>
+    <div class="new-section"></div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Match</th>
-                <th>Season</th>
-                <th>Week</th>
-                <th>Gamemode</th>
-                <th>Tier</th>
-                <th>Stream</th>
-                <th>Result</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                try
-                {
-                    // connect sql
-                    require 'includes/db.php';
+    <!-- section 3 - schedule -->
+    <section class="table">
+        <h2 class="container text-center">IGL Game List</h2>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Season</th>
+                        <th>Week</th>
+                        <th>Gamemode</th>
+                        <th>Tier</th>
+                        <th>Stream</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        try
+                        {
+                            // connect sql
+                            require 'includes/db.php';
 
-                    // get table
-                    $sql = "SELECT * FROM iglSchedule";
-                    $cmd = $db->prepare($sql);
-                    $cmd->execute();
-                    $games = $cmd->fetchAll();
+                            // get table
+                            $sql = "SELECT * FROM iglSchedule";
+                            $cmd = $db->prepare($sql);
+                            $cmd->execute();
+                            $games = $cmd->fetchAll();
 
-                    $sql = "SELECT * FROM iglTeams";
-                    $cmd = $db->prepare($sql);
-                    $cmd->execute();
-                    $teams = $cmd->fetchAll();
+                            $sql = "SELECT * FROM iglTeams";
+                            $cmd = $db->prepare($sql);
+                            $cmd->execute();
+                            $teams = $cmd->fetchAll();
 
-                    $sql = "SELECT * FROM seasons";
-                    $cmd = $db->prepare($sql);
-                    $cmd->execute();
-                    $seasons = $cmd->fetchAll();
+                            $sql = "SELECT * FROM seasons";
+                            $cmd = $db->prepare($sql);
+                            $cmd->execute();
+                            $seasons = $cmd->fetchAll();
 
-                    $sql = "SELECT * FROM currentWeek";
-                    $cmd = $db->prepare($sql);
-                    $cmd->execute();
-                    $currentWeek = $cmd->fetchAll();
+                            $sql = "SELECT * FROM currentWeek";
+                            $cmd = $db->prepare($sql);
+                            $cmd->execute();
+                            $currentWeek = $cmd->fetchAll();
 
-                    // loops through data and creates table
-                    foreach ($currentWeek as $week)
-                    {                   
-                        foreach ($seasons as $season)
-                        {   
-                            if ($season['seasonId'] == $week['seasonId'])
-                            {                       
-                                foreach ($teams as $team)
-                                {     
-                                    // if season == team season is playing in
-                                    if ($team['seasonId'] == $week['seasonId'])
-                                    {     
-                                        foreach ($games as $game)
-                                        {                    
-                                                    
-                                            // if team == team with a match
-                                            if ($team['iglTeamId'] == $game['iglTeamId'] && $game['week'] == $week['week'])
-                                            {
-                                                echo 
-                                                '<tr>
-                                                    <td>' . $team['teamName'] . ' VS ' . $game['opponent'] . '</td>
-                                                    <td>' . $season['seasonName'] . '</td>
-                                                    <td>' . $game['week'] . '</td>
-                                                    <td>' . $team['mode'] . '</td>
-                                                    <td>' . $team['tier'] . '</td>';
-
-                                                    if (!empty($game['stream']))
+                            // loops through data and creates table
+                            foreach ($currentWeek as $week)
+                            {                   
+                                foreach ($seasons as $season)
+                                {   
+                                    if ($season['seasonId'] == $week['seasonId'])
+                                    {                       
+                                        foreach ($teams as $team)
+                                        {     
+                                            // if season == team season is playing in
+                                            if ($team['seasonId'] == $week['seasonId'])
+                                            {     
+                                                foreach ($games as $game)
+                                                {                    
+                                                            
+                                                    // if team == team with a match
+                                                    if ($team['iglTeamId'] == $game['iglTeamId'] && $game['week'] == $week['week'])
                                                     {
-                                                        echo '<td>
-                                                            <a href="' . $game['stream'] . '" id="stream link" target="_blank">Link</a>
-                                                        </td>';
-                                                    }
-                                                    else
-                                                    {
-                                                        echo '<td>No Stream</td>';
-                                                    }
+                                                        echo 
+                                                        '<tr>
+                                                            <td>' . $team['teamName'] . ' VS ' . $game['opponent'] . '</td>
+                                                            <td>' . $season['seasonName'] . '</td>
+                                                            <td>' . $game['week'] . '</td>
+                                                            <td>' . $team['mode'] . '</td>
+                                                            <td>' . $team['tier'] . '</td>';
 
-                                                    if ($game['gameWins'] > 0 || $game['gameLosses'] > 0)
-                                                    {
-                                                        echo '<td>' . $game['gameWins'] . '-' . $game['gameLosses'] . '</td>';
-                                                    }
-                                                    else
-                                                    {
-                                                        echo '<td>TBD</td>';
-                                                    }
-                                                echo '</tr>';
-                                            }                                
+                                                            if (!empty($game['stream']))
+                                                            {
+                                                                echo '<td>
+                                                                    <a href="' . $game['stream'] . '" id="stream link" target="_blank">Link</a>
+                                                                </td>';
+                                                            }
+                                                            else
+                                                            {
+                                                                echo '<td>No Stream</td>';
+                                                            }
+
+                                                            if ($game['gameWins'] > 0 || $game['gameLosses'] > 0)
+                                                            {
+                                                                echo '<td>' . $game['gameWins'] . '-' . $game['gameLosses'] . '</td>';
+                                                            }
+                                                            else
+                                                            {
+                                                                echo '<td>TBD</td>';
+                                                            }
+                                                        echo '</tr>';
+                                                    }                                
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
+                            $db = null;
                         }
-                    }
-                    $db = null;
-                }
-                // if site is unable to load
-                catch (Exception $error)
-                {
-                    header('location:error.php');
-                }
-            ?>
-        </tbody>
-    </table>
-</section>
+                        // if site is unable to load
+                        catch (Exception $error)
+                        {
+                            header('location:error.php');
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
 <?php
     require 'includes/footer.php';

@@ -22,15 +22,15 @@
             $ok = false;
         }
         
-        if (empty($seriesWins)) 
+        if ($seriesWins < 0) 
         {
-            echo '<p class="alert alert-info">Wins is required.</p>';
+            echo '<p class="alert alert-info">Wins must be 0 or greater.</p>';
             $ok = false;
         }
 
-        if (empty($seriesLosses)) 
+        if ($seriesLosses < 0) 
         {
-            echo '<p class="alert alert-info">Losses is required.</p>';
+            echo '<p class="alert alert-info">Losses must be 0 or greater.</p>';
             $ok = false;
         }
 

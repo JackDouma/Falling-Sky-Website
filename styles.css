@@ -1,6 +1,115 @@
 /**********/
 /* GLOBAL */
 /**********/
+h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
+{
+    color: #ff0b51;
+}
+.new-section
+{
+    background-color: #ff0b51;
+    width: auto;
+    height: 15px;
+}
+.masthead
+{
+    height: 400px;
+    position: relative;
+    background-color: #240d30;
+}
+.masthead > div
+{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+.masthead > div > h1
+{
+    color: #ff0b51;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* textbox */
+.textbox
+{
+    display: grid;
+    align-items: center;
+    background-color: #240d30;
+}
+.textbox > h2
+{
+    font-size: 60px;
+    color: #ff0b51;
+    display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textbox > div
+{
+    width: 750px;
+    border: 15px solid #ff0b51;
+    background-color: #240d30;
+    padding: 50px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textbox > div > p
+{
+    font-size: 24px;
+    color: #ff0b51; 
+}
+.table
+{
+    background-color: #240d30; 
+    overflow: hidden;
+}
+.table > h2
+{
+    font-size: 60px;
+    color: #ff0b51;
+    display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table > div > table
+{
+    text-align: center;
+    width: 100%;
+}
+.table > div > table
+{
+    color: #ff0b51; 
+}
+.table > div > table > thead > tr > th
+{
+    color: #ff0b51; 
+    font-size: 32px;
+}
+.table > div > table > tbody > tr > td
+{
+    color: #ff0b51; 
+    font-size: 22px;
+}
+/* h2 */
+.h2
+{
+    background-color: #240d30;
+}
+.h2 > div > h2
+{
+    font-size: 60px;
+    text-align: center;
+}
+/* button */
 button
 {
     font-size: 20px;
@@ -66,66 +175,6 @@ body > nav > ul > li > img
 /*   home   */
 /************/
 
-/* masthead */
-.i-masthead
-{
-    background-image: url('./img/i-masthead.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 75vh;
-}
-.i-masthead > div
-{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-
-/* row one */
-.i-row-one
-{
-    display: grid;
-    align-items: center;
-    background-color:#fff;;
-}
-
-.i-row-one > h2
-{
-    font-size: 60px;
-    color: #ff0b51;
-    display: block;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.i-row-one > div
-{
-    width: 750px;
-    border: 15px solid #ff0b51;
-    background-color: #240d30;
-    padding: 50px;
-    margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.i-row-one > div > p
-{
-    font-size: 20px;
-    color: #ff0b51; 
-}
-/* row two */
-.i-row-two > h2
-{
-    font-size: 60px;
-    color: #ff0b51;
-    display: block;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*************/
 /*   staff   */
@@ -133,12 +182,13 @@ body > nav > ul > li > img
 /* row one */
 .s-row-one
 {
+    background-color: #240d30; 
     grid-template-columns: repeat(3, 33%);
     display: grid;
     column-gap: auto;
     justify-content: center;
 }
-.s-h2-1 > h2
+.s-h2 > h2
 {
     font-size: 60px;
     color: #ff0b51;
@@ -167,16 +217,6 @@ body > nav > ul > li > img
     margin-right: auto;
 }
 
-
-/* row two */
-.s-h2-2 > h2
-{
-    font-size: 60px;
-    color: #ff0b51;
-    text-align: center;
-    font-weight: bold;
-}
-
 .s-row-two > div
 {
     width: 750px;
@@ -195,6 +235,7 @@ body > nav > ul > li > img
 /* row one */
 .s-row-three
 {
+    background-color: #240d30;
     grid-template-columns: repeat(2, 50%);
     display: grid;
     column-gap: auto;
@@ -203,15 +244,21 @@ body > nav > ul > li > img
 .s-row-three > div > h3
 {
     font-size: 40px;
-    color: #ff0b51;
     text-align: center;
 }
 .s-row-three > div > h6
 {
     font-size: 25px;
-    color: #ff0b51;
     text-align: center;
     font-style: italic;
+}
+.s-row-three > div > form > fieldset
+{
+    font-size: 22px;
+}
+.s-row-three > div > form > fieldset
+{
+    font-size: 22px;
 }
 
 
@@ -241,7 +288,7 @@ body > nav > ul > li > img
 {
     color: #ff0b51;
     text-align: center;
-    font-size: 24px;
+    font-size: 14px;
 }
 .footer > div
 {
@@ -293,12 +340,24 @@ body > nav > ul > li > img
 /*   team details   */
 /********************/
 /* title */
-.td-title > h1
+.td-title
+{
+    background-color: #240d30;
+    overflow: hidden;
+}
+.td-title > div > h1
 {
     font-size: 60px;
     color: #ff0b51;
     text-align: center;
     font-weight: bold;
+}
+/* title */
+.td-title > div > h2
+{
+    font-size: 50px;
+    color: #ff0b51;
+    text-align: center;
 }
 
 /* row one */
@@ -308,6 +367,7 @@ body > nav > ul > li > img
     display: grid;
     column-gap: auto;
     justify-content: center;
+    background-color: #240d30;
 }
 .td-row-one > div
 {
@@ -324,6 +384,7 @@ body > nav > ul > li > img
     font-size: 40px;
     color: #ff0b51;
     text-align: center;
+    font-weight: bold;
 }
 .td-row-one > div > div > h5
 {
@@ -332,13 +393,21 @@ body > nav > ul > li > img
     text-align: center;
     text-decoration: none;
 }
+.td-row-one > div > div > h6
+{
+    font-size: 20px;
+    color: #ff0b51;
+    text-align: center;
+    text-decoration: none;
+}
 /* row 2 */
-.td-row-two
+.td-row-three
 {
     display: grid;
     align-items: center;
+    background-color: #240d30;
 }
-.td-row-two > a
+.td-row-three > a
 {
     font-size: 25px;
     text-align: center;
@@ -349,7 +418,7 @@ body > nav > ul > li > img
     text-decoration: none;
     transition: .5s ease-in-out;
 }
-.td-row-two > a:hover
+.td-row-three > a:hover
 {
     color: #B90E0A
 }
@@ -357,6 +426,11 @@ body > nav > ul > li > img
 /*   player details   */
 /**********************/
 /* title */
+.pd-title
+{
+    background-color: #240d30;
+    overflow: hidden;
+}
 .pd-title > h1
 {
     font-size: 60px;
@@ -373,25 +447,37 @@ body > nav > ul > li > img
 /* row one */
 .pd-row-one
 {
+    background-color: #240d30;
+    overflow: hidden;
+}
+.pd-row-one > div
+{
+    background-color: #240d30;
     width: 475px;
     border: 15px solid #ff0b51;
-    background-color: #240d30;
     padding: 30px;
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-.pd-row-one > h3
+.pd-row-one > div > h3
 {
     font-size: 40px;
     color: #ff0b51;
     text-align: center;
+    font-weight: bold;
 }
-.pd-row-one > div > h5
+.pd-row-one > div > div > h5
 {
     font-size: 30px;
     color: #ff0b51;
     text-align: left;
+}
+
+
+.login
+{
+    background-color: #240d30;
 }
 /*********************/
 /* responsive design */
@@ -413,37 +499,62 @@ body > nav > ul > li > img
     {
         height: 50px;
     }
-    /* masthead */
-    .i-masthead
+    /* new section */
+    .new-section
     {
-        height: 28vh;
+        height: 10px;
     }
-
-    /* index row one */
-    .i-row-one > div
-    {
-        width: 350px;
-        padding: 25px;
-    }
-
-    .i-row-one > div > p
-    {
-        font-size: 16px;
-    }
-
-    .i-row-one > h2
+    /* h2 */
+    .h2 > div > h2
     {
         font-size: 30px;
     }
+    /* masthead */
+    .masthead
+    {
+        height: 200px;
+    }
+    .masthead > div > h1
+    {
+        font-size: 32px;
+    }
+    /* textbox */
+    .textbox > h2
+    {
+        font-size: 26px;
+    }
 
+    .textbox > div
+    {
+        width: 250px;
+        border: 10px solid #ff0b51;
+        padding: 30px;
+    }
+    .textbox > div > p
+    {
+        font-size: 15px;
+        color: #ff0b51; 
+    }
+    .table
+    {
+        background-color: #240d30; 
+    }
+    .table > h2
+    {
+        font-size: 26px;
+    }
+    .table > table > thead > tr > th
+    {
+        font-size: 15px;
+    }
+    .table > table > tbody > tr > td
+    {
+        font-size: 10px;
+    }
     /* staff row one */
     .s-row-one
     {
         grid-template-columns: repeat(1, 100%);
-    }
-    .s-h2-1 > h2
-    {
-        font-size: 30px;
     }
     .s-row-one > div > h3
     {
@@ -470,7 +581,11 @@ body > nav > ul > li > img
     }
 
     /* staff row three */
-    .s-row-three > h3
+    .s-row-three
+    {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .s-row-three > div > h3
     {
         font-size: 25px;
     }
@@ -483,7 +598,10 @@ body > nav > ul > li > img
     {
         font-size: 20px;
     }
-
+    .s-row-three > div > form > fieldset
+    {
+        font-size: 14px;
+    }
     /* staff row four */
     .s-row-four > h3
     {
@@ -510,32 +628,34 @@ body > nav > ul > li > img
         font-size: 16px;
     }
     /* footer */
-    .footer > div > h1
+    .footer > img
     {
-    color: #fff;
-    font-size: 30px;
+        height: 80px;
+    }
+    .footer > p
+    {
+        font-size: 15px;
+    }
+    .footer > div > a > img
+    {
+        height: 20px;
     }
 
-    .footer > div > p
-    {
-    color: #fff;
-    font-size: 15px;
-    }
-
-    .td-title > h1
-    {
-        font-size: 40px;
-    }
     .rh-h2-2 > h2
     {
         font-size: 30px;
     }
 
     /* team details title */
-    .td-title > h1
+    .td-title > div > h1
     {
-        font-size: 30px;
+        font-size: 35px;
     }
+     /* team details title */
+     .td-title > div > h2
+     {
+         font-size: 28px;
+     }
 
     /* team details row one */
     .td-row-one
@@ -566,16 +686,16 @@ body > nav > ul > li > img
         font-size: 10px;
     }
     /* player details row one */
-    .pd-row-one
+    .pd-row-one > div
     {
         width: 300px;
         padding: 20px;
     }
-    .pd-row-one > h3
+    .pd-row-one > div > h3
     {
         font-size: 25px;
     }
-    .pd-row-one > div > h5
+    .pd-row-one > div > div > h5
     {
         font-size: 20px;
     }

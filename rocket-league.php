@@ -4,12 +4,13 @@
 ?>
 
     <!-- masthead -->
-    <section class="rh-masthead">
+    <section class="masthead">
         <div>
-            <h1>RL Academy header here</h1>
+            <h1>ROCKET LEAGUE</h1>
         </div>
     </section>
 
+    <div class="new-section"></div>
     <!-- section 1 - main roster 
     <section class="rh-h2-1">
         <h2>Main Roster</h2>
@@ -32,16 +33,16 @@
 
 
     <!-- section 2 - IGL -->
-    <section class="rh-title">
+    <section class="textbox">
         <h2>Indy Gaming League</h2>
         <div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
     </section>
 
-    <section class="rh-row-two">
-        <div class="container text-center">
-            <table class="table table-sm">
+    <section class="table">
+        <div>
+            <table>
                 <thead>
                     <tr>
                         <th>Season</th>
@@ -80,21 +81,23 @@
                         }
                     ?>
                 </tbody>
-            </table>
-        </div>           
-    </section>
+            </table> 
+        </div>         
+    
 
-    <!-- section 2 - IGL -->
-    <section class="rh-title">
+    <div class="new-section"></div>
+
+    <!-- section 2 - BLCS -->
+    <section class="textbox">
         <h2>BLCS</h2>
         <div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
     </section>
 
-    <section class="rh-row-three">
-        <div class="container text-center">
-            <table class="table table-striped">
+    <section class="table">
+        <div>
+            <table>
                 <thead>
                     <tr>
                         <th>Match</th>
@@ -155,8 +158,8 @@
                         <td>TBD</td>
                     </tr>
                 </tbody>
-            </table>
-        </div>           
+            </table> 
+        </div>          
     </section>
 </body>
 <?php
