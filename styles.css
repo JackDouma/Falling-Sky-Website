@@ -98,6 +98,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
 {
     color: #ff0b51; 
     font-size: 22px;
+    padding: 12px;
 }
 /* h2 */
 .h2
@@ -526,9 +527,9 @@ body > nav > ul > li > img
 
     .textbox > div
     {
-        width: 250px;
+        width: 275px;
         border: 10px solid #ff0b51;
-        padding: 30px;
+        padding: 15px;
     }
     .textbox > div > p
     {
@@ -541,15 +542,16 @@ body > nav > ul > li > img
     }
     .table > h2
     {
-        font-size: 26px;
+        font-size: 20px;
     }
-    .table > table > thead > tr > th
+    .table > div > table > thead > tr > th
     {
         font-size: 15px;
     }
-    .table > table > tbody > tr > td
+    .table > div > table > tbody > tr > td
     {
         font-size: 10px;
+        padding: 8px;
     }
     /* staff row one */
     .s-row-one

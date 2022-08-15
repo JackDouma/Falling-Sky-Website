@@ -153,12 +153,12 @@
                         // this php code will get and show all players that have been created
                         require 'includes/db.php';
 
-                        $sql = "SELECT * FROM iglPlayers";
+                        $sql = "SELECT * FROM iglPlayers ORDER BY name ASC";
 
                         $cmd = $db->prepare($sql);
                         $cmd->execute();
                         $players = $cmd->fetchAll();
-
+                     
                         foreach ($players as $player) 
                         {         
                             if ($captain == $player['iglPlayerId'])   
@@ -189,15 +189,6 @@
                 <?php
                     try 
                     {
-                        // this php code will get and show all players that have been created
-                        require 'includes/db.php';
-
-                        $sql = "SELECT * FROM iglPlayers";
-
-                        $cmd = $db->prepare($sql);
-                        $cmd->execute();
-                        $players = $cmd->fetchAll();
-
                         foreach ($players as $player) 
                         {         
                             if ($player1 == $player['iglPlayerId'])   
@@ -209,8 +200,6 @@
                                 echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
                             }            
                         }
-
-                        $db = null;
                     }
                     catch (Exception $error) 
                     {
@@ -228,15 +217,6 @@
                 <?php
                     try 
                     {
-                        // this php code will get and show all players that have been created
-                        require 'includes/db.php';
-
-                        $sql = "SELECT * FROM iglPlayers";
-
-                        $cmd = $db->prepare($sql);
-                        $cmd->execute();
-                        $players = $cmd->fetchAll();
-
                         foreach ($players as $player) 
                         {         
                             if ($player2 == $player['iglPlayerId'])   
@@ -248,8 +228,6 @@
                                 echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
                             }            
                         }
-
-                        $db = null;
                     }
                     catch (Exception $error) 
                     {
@@ -267,15 +245,6 @@
                 <?php
                     try 
                     {
-                        // this php code will get and show all players that have been created
-                        require 'includes/db.php';
-
-                        $sql = "SELECT * FROM iglPlayers";
-
-                        $cmd = $db->prepare($sql);
-                        $cmd->execute();
-                        $players = $cmd->fetchAll();
-
                         foreach ($players as $player) 
                         {         
                             if ($player3 == $player['iglPlayerId'])   
@@ -287,8 +256,6 @@
                                 echo '<option value="' . $player['iglPlayerId'] . '">' . $player['name'] . '</option>'; 
                             }            
                         }
-
-                        $db = null;
                     }
                     catch (Exception $error) 
                     {
@@ -298,7 +265,7 @@
             </select>
         </fieldset>
 
-        <!-- captain -->
+        <!-- player4 -->
         <fieldset class="m-1">
             <label for="player4" class="col-2">Player 4 (optional):</label>
             <select name="player4" id="player4">
@@ -306,15 +273,6 @@
                 <?php
                     try 
                     {
-                        // this php code will get and show all players that have been created
-                        require 'includes/db.php';
-
-                        $sql = "SELECT * FROM iglPlayers";
-
-                        $cmd = $db->prepare($sql);
-                        $cmd->execute();
-                        $players = $cmd->fetchAll();
-
                         foreach ($players as $player) 
                         {         
                             if ($player4 == $player['iglPlayerId'])   
@@ -327,7 +285,7 @@
                             }            
                         }
 
-                        $db = null;
+                       
                     }
                     catch (Exception $error) 
                     {
