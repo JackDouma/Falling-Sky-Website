@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    }R
+}
 .masthead > div > h1
 {
     color: #ff0b51;
@@ -66,6 +66,28 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
     font-size: 24px;
     color: #ff0b51; 
 }
+.textbox > video
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 320;
+    height: auto;
+}
+.textbox > img
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 425px;
+    width: auto;
+} 
+.textbox > a 
+{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    color: #ff0b51; 
+}
+
 .table
 {
     background-color: #240d30; 
@@ -257,11 +279,6 @@ body > nav > ul > li > img
 {
     font-size: 22px;
 }
-.s-row-three > div > form > fieldset
-{
-    font-size: 22px;
-}
-
 
 /**************/
 /*   footer   */
@@ -537,6 +554,19 @@ body > nav > ul > li > img
         font-size: 15px;
         color: #ff0b51; 
     }
+    .textbox > video
+    {
+        width: 320px;
+        height: auto;
+    }
+    .textbox > img
+    {
+        height: 175px;
+    } 
+    .textbox > a 
+    {
+        font-size: 20px;
+    }
     .table
     {
         background-color: #240d30; 
@@ -603,7 +633,7 @@ body > nav > ul > li > img
     }
     .s-row-three > div > form > fieldset
     {
-        font-size: 14px;
+        font-size: 10px;
     }
     /* staff row four */
     .s-row-four > h3
