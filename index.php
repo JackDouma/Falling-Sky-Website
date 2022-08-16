@@ -29,17 +29,41 @@
 
     <!-- section 2 - how to join-->
     <section class="textbox">
-        <h2>How To Join</h2>
+        <h2>How to Join</h2>
 
         <div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+            <p>Lorem Ipsum Sis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>           
+    </section>
+
+    <div class="new-section"></div>
+    
+    <!-- section 3 - watch our games-->
+    <section class="textbox">
+        <h2>Watch our Games!</h2>
+
+        <div>
+            <p>We Frequently cast our team's matches on our <a href="https://www.twitch.tv/fallingskygg" target="_blank">Twitch channel.</a>. Check out our <a href="#schedule">schedule</a> for upcoming games!</a></p>
+        </div>  
+        <video width="920" height="auto" controls>
+            <source src="video\twitch_clip.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>      
+    </section>
+
+    <div class="new-section"></div>
+
+    <!-- section 2 - decal-->
+    <section class="textbox">
+        <h2>Our Rocket League Decal</h2>
+        <img src="img\decal.png" id="decal">
+        <a href="file/Falling_Sky_Octane_Decal.zip" download="Falling_Sky_Octane_Decal.zip">Download</a>
     </section>
 
     <div class="new-section"></div>
 
     <!-- section 3 - schedule -->
-    <section class="table">
+    <section class="table" id="schedule">
         <h2 class="container text-center">IGL Game List</h2>
         <div>
             <table>
