@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    }
+    }R
 .masthead > div > h1
 {
     color: #ff0b51;
@@ -379,6 +379,7 @@ body > nav > ul > li > img
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 .td-row-one > div > h3
 {
@@ -677,7 +678,10 @@ body > nav > ul > li > img
     {
         font-size: 20px;
     }
-
+    .td-row-one > div > div > h6
+    {
+        font-size: 15px;
+    }
     /* player details title */
     .td-title > h1
     {

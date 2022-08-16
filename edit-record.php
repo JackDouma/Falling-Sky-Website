@@ -2,7 +2,7 @@
 <?php
     $title = 'Edit Team Record';
     require 'includes/header.php';
-    require 'includes/admin-auth.php';
+    require 'includes/captain-auth.php';
 
     try
     {
@@ -36,6 +36,7 @@
                     $seriesWins = $team['seriesWins'];
                     $seriesLosses = $team['seriesLosses'];
                     $placement = $team['placement'];
+                    $captainId = $team['captain'];
                     $db = null;
                 }
                 // if not found
@@ -57,7 +58,6 @@
 
 <main class="container">
     <h1>Team Record Edit</h1>
-
     <form method="post" action="save-record.php">
 
         <!-- team name -->
@@ -76,17 +76,29 @@
                         $cmd = $db->prepare($sql);
                         $cmd->execute();
                         $teams = $cmd->fetchAll();
-
-                        foreach ($teams as $team) 
-                        {         
-                            if ($teamName == $team['teamName'])   
-                            {
-                                echo '<option selected value="' . $team['teamName'] . '">' . $team['teamName'] . '</option>'; 
-                            }     
-                            else
-                            {
-                                echo '<option value="' . $team['teamName'] . '">' . $team['teamName'] . '</option>'; 
-                            }            
+                        if ($_SESSION['type'] == 1)
+                        {
+                            foreach ($teams as $team) 
+                            {         
+                                if ($iglTeamId == $team['iglTeamId'])   
+                                {
+                                    echo '<option selected value="' . $team['teamName'] . '">' . $team['teamName'] . '</option>'; 
+                                }
+                                else
+                                {
+                                    echo '<option value="' . $team['teamName'] . '">' . $team['teamName'] . '</option>'; 
+                                }               
+                            }
+                        }
+                        else if ($_SESSION['type'] == 2)
+                        {    
+                            foreach ($teams as $team) 
+                            {       
+                                if ($iglTeamId == $team['iglTeamId'])   
+                                {
+                                    echo '<option selected value="' . $team['teamName'] . '">' . $team['teamName'] . '</option>'; 
+                                }  
+                            }           
                         }
 
                         $db = null;

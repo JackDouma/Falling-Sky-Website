@@ -94,22 +94,40 @@
                         $cmd = $db->prepare($sql);
                         $cmd->execute();
                         $seasons = $cmd->fetchAll();
-
-                        foreach ($seasons as $season)
+                        if ($_SESSION['type'] == 1)
                         {
-                            foreach ($teams as $team) 
-                            {         
-                                if ($team['seasonId'] == $season['seasonId'])
-                                {                                
-                                    if ($iglTeamId == $team['iglTeamId'])   
-                                    {
-                                        echo '<option selected value="' . $team['iglTeamId'] . '">' . $season['seasonName'] . ' ' . $team['teamName'] . ' ' . $team['mode'] . '</option>'; 
-                                    }     
-                                    else
-                                    {
-                                        echo '<option value="' . $team['iglTeamId'] . '">' . $season['seasonName'] . ' ' . $team['teamName'] . ' ' . $team['mode'] . '</option>'; 
-                                    } 
-                                }           
+                            foreach ($seasons as $season)
+                            {
+                                foreach ($teams as $team) 
+                                {         
+                                    if ($team['seasonId'] == $season['seasonId'])
+                                    {                                
+                                        if ($iglTeamId == $team['iglTeamId'])   
+                                        {
+                                            echo '<option selected value="' . $team['iglTeamId'] . '">' . $season['seasonName'] . ' ' . $team['teamName'] . ' ' . $team['mode'] . '</option>'; 
+                                        }     
+                                        else
+                                        {
+                                            echo '<option value="' . $team['iglTeamId'] . '">' . $season['seasonName'] . ' ' . $team['teamName'] . ' ' . $team['mode'] . '</option>'; 
+                                        } 
+                                    }           
+                                }
+                            }
+                        }
+                        else if ($_SESSION['type'] == 2)
+                        {
+                            foreach ($seasons as $season)
+                            {
+                                foreach ($teams as $team) 
+                                {         
+                                    if ($team['seasonId'] == $season['seasonId'])
+                                    {                                
+                                        if ($iglTeamId == $team['iglTeamId'])   
+                                        {
+                                            echo '<option selected value="' . $team['iglTeamId'] . '">' . $season['seasonName'] . ' ' . $team['teamName'] . ' ' . $team['mode'] . '</option>'; 
+                                        }     
+                                    }           
+                                }
                             }
                         }
 

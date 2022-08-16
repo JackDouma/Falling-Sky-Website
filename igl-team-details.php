@@ -52,6 +52,10 @@
                     $placement = $team['placement'];
 
                     $db = null;
+                    if($_SESSION['type'] == 1 || $_SESSION['type'] == 2)
+                    {
+                        $loggedIn = true;
+                    }
                 }
                 // if not found
                 else
@@ -96,6 +100,7 @@
                     {         
                         if ($captain == $player['iglPlayerId'])   
                         {
+                            $captainName = $player['name'];
                             echo '<div>';
                                 echo '<h5>';
                                     echo 'Captain: <a href=igl-player-details.php?iglPlayerId=' . $player['iglPlayerId'] . '>' . $player['name'] . '</a>';
@@ -223,6 +228,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -241,6 +250,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -259,6 +272,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -277,6 +294,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -295,6 +316,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -313,6 +338,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }
@@ -345,6 +374,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }  
@@ -363,6 +396,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     } 
@@ -381,6 +418,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
 
                                 // determine if there's a 3rd place or 1st place match
                                 if ($game['gameWins'] > $game['gameLosses'])
@@ -409,6 +450,10 @@
                                         echo $game['gameWins'] . '-' . $game['gameLosses'];
                                     echo '</h6>';
                                 echo '</div>';
+                                if($loggedIn)
+                                {
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                }
                             }
                         }
                     }                                                                                                  
@@ -431,8 +476,9 @@
             }
             
             // check session for admin
-            if($_SESSION['type'] == 1 || $_SESSION['type'] == 2)
+            if($_SESSION['type'] == 1 || ($_SESSION['type'] == 2 && $_SESSION['name'] == $captainName))
             {
+                
                 echo '<a href="edit-record.php?iglTeamId=' . $iglTeamId . '">Edit Record</a>';
                 echo '<a href="add-igl-game.php?iglTeamId=' . $iglTeamId . '">Add Game</a>';
             }

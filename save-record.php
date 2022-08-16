@@ -4,7 +4,7 @@
         // get header
         $title = 'Saving Record...';
         require 'includes/header.php';
-        require 'includes/admin-auth.php';
+        require 'includes/captain-auth.php';
 
         // get form inputs
         $iglTeamId = $_POST['iglTeamId'];

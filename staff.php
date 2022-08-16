@@ -21,22 +21,22 @@
     <div>
         <h3>Ren</h3>
         <h5>Owner</h5>
-        <img src="img\star.png" id="temp">
+        <img src="img\ren.png" id="temp">
     </div>
     <div>
         <h3>Ares</h3>
         <h5>Owner</h5>
-        <img src="img\star.png" id="temp">
+        <img src="img\ares.png" id="temp">
     </div> 
     <div>
         <h3>Fion3il</h3>
         <h5>Admin</h5>
-        <img src="img\star.png" id="temp">
+        <img src="img\fion3il.jpg" id="temp">
     </div>  
     <div>
         <h3>Zenith</h3>
         <h5>RL Manager</h5>
-        <img src="img\star.png" id="temp">
+        <img src="img\zenith.jpg" id="temp">
     </div> 
     <div>
         <h3>JackeyBoy</h3>
@@ -46,7 +46,7 @@
     <div>
         <h3>Hakuu</h3>
         <h5>Social Media</h5>
-        <img src="img\star.png" id="temp">
+        <img src="img\hakku.jpg" id="temp">
     </div>               
 </section>
 
