@@ -15,6 +15,7 @@
         $stream = $_POST['stream'];
         $gameWins = $_POST['gameWins'];
         $gameLosses = $_POST['gameLosses'];
+        $time = $_POST['time'];
         $ok = true;
 
 
@@ -76,7 +77,7 @@
             //// new team ////
             if (empty($scheduleId))
             {
-                // check for any existing teams. There can be multipe teams with the same name in different seasons, or modes.
+                // check for any existing games vs same team
                 $sql = "SELECT * FROM iglSchedule WHERE iglTeamId = :iglTeamId AND week = :week AND opponent = :opponent";
                 $cmd = $db->prepare($sql);
                 $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
@@ -94,7 +95,7 @@
                 else
                 {                    
                     // save new team
-                    $sql = "INSERT INTO iglSchedule (iglTeamId, opponent, week, stream, gameWins, gameLosses) VALUES (:iglTeamId, :opponent, :week, :stream, :gameWins, :gameLosses)";
+                    $sql = "INSERT INTO iglSchedule (iglTeamId, opponent, week, stream, gameWins, gameLosses, time) VALUES (:iglTeamId, :opponent, :week, :stream, :gameWins, :gameLosses, :time)";
                     $cmd = $db->prepare($sql);
                     $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
                     $cmd->bindParam(':opponent', $opponent, PDO::PARAM_STR, 30);
@@ -102,6 +103,7 @@
                     $cmd->bindParam(':stream', $stream, PDO::PARAM_STR, 100);
                     $cmd->bindParam(':gameWins', $gameWins, PDO::PARAM_INT);
                     $cmd->bindParam(':gameLosses', $gameLosses, PDO::PARAM_INT);
+                    $cmd->bindParam(':time', $time, PDO::PARAM_STR, 50);
                     
                     $cmd->execute();
                     
@@ -127,7 +129,7 @@
                 if($game)
                 {
                     // sql update command
-                    $sql = "UPDATE iglSchedule SET iglTeamId = :iglTeamId, opponent = :opponent, week = :week, stream = :stream, gameWins = :gameWins, gameLosses = :gameLosses WHERE scheduleId = :scheduleId";
+                    $sql = "UPDATE iglSchedule SET iglTeamId = :iglTeamId, opponent = :opponent, week = :week, stream = :stream, gameWins = :gameWins, gameLosses = :gameLosses, time = :time WHERE scheduleId = :scheduleId";
                     $cmd = $db->prepare($sql);
                     $cmd->bindParam(':iglTeamId', $iglTeamId, PDO::PARAM_INT);
                     $cmd->bindParam(':opponent', $opponent, PDO::PARAM_STR, 30);
@@ -135,6 +137,7 @@
                     $cmd->bindParam(':stream', $stream, PDO::PARAM_STR, 100);
                     $cmd->bindParam(':gameWins', $gameWins, PDO::PARAM_INT);
                     $cmd->bindParam(':gameLosses', $gameLosses, PDO::PARAM_INT);
+                    $cmd->bindParam(':time', $time, PDO::PARAM_STR, 50);
                     
 
                     if (!empty($scheduleId)) 
@@ -147,7 +150,7 @@
                     $db = null;
 
                     echo '<div class="alert alert-info">Game Saved.  
-                        <a href="index.php">To Home</a>
+                        <a href="igl-team-details.php?iglTeamId='. $iglTeamId . '">To Team Page</a>
                     </div>';
                 }
             }

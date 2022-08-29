@@ -22,31 +22,37 @@
         <h3>Ren</h3>
         <h5>Owner</h5>
         <img src="img\ren.png" id="ren">
+        <a href="https://twitter.com/FSE_Ren" target="_blank"><img src="img\twitter.png" id="ren_twitter"></a>
     </div>
     <div>
         <h3>Ares</h3>
         <h5>Owner</h5>
         <img src="img\ares.png" id="ares">
+        <a href="https://twitter.com/aid_blossom" target="_blank"><img src="img\twitter.png" id="ares_twitter"></a>
     </div> 
     <div>
         <h3>Fion3il</h3>
         <h5>Admin</h5>
         <img src="img\fion3il.jpg" id="fion3il">
+        <a href="https://twitter.com/fion3il" target="_blank"><img src="img\twitter.png" id="fion3il_twitter"></a>
     </div>  
     <div>
         <h3>Zenith</h3>
         <h5>RL Manager</h5>
-        <img src="img\zenith.jpg" id="zenith">
+        <img src="img\zenith.jpg" id="fion3il">
+        <a href="https://twitter.com/zenith6000x" target="_blank"><img src="img\twitter.png" id="zenith_twitter"></a>
     </div> 
     <div>
         <h3>JackeyBoy</h3>
         <h5>Website Dev</h5>
-        <img src="img\jackeyboy.jpg" id="jackeyboy">
+        <img src="img\jackeyboy.png" id="jackeyboy">
+        <a href="https://twitter.com/JackeyB0y" target="_blank"><img src="img\twitter.png" id="jackeyboy_twitter"></a>
     </div>
     <div>
         <h3>Hakuu</h3>
         <h5>Social Media</h5>
-        <img src="img\hakku.jpg" id="hakuu">
+        <img src="img\hakuu.jpg" id="hakuu">
+        <a href="https://twitter.com/HakuuMF" target="_blank"><img src="img\twitter.png" id="twitter"></a>
     </div>               
 </section>
 

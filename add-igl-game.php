@@ -12,6 +12,7 @@
         $stream = null;
         $gameWins = null;
         $gameLosses = null;
+        $time = null;
         
         if (isset($_GET['scheduleId'])) 
         {
@@ -40,6 +41,7 @@
                     $stream = $schedule['stream'];
                     $gameWins = $schedule['gameWins'];
                     $gameLosses = $schedule['gameLosses'];
+                    $time = $schedule['time'];
 
                     $db = null;
                 }
@@ -165,21 +167,27 @@
             </select>
         </fieldset>
 
+        <!-- time -->
+        <fieldset class="m-1">
+            <label for="time" class="col-2">Date & Time:</label>
+            <input name="time" id="time" maxlength="100" placeholder="mm/dd 00:00" value="<?php echo $time; ?>" />
+        </fieldset>
+
         <!-- stream -->
         <fieldset class="m-1">
-            <label for="stream" class="col-2">Stream(optional):</label>
+            <label for="stream" class="col-2">Stream Link:</label>
             <input name="stream" id="stream" maxlength="100" value="<?php echo $stream; ?>" />
         </fieldset>
 
         <!-- wins -->
         <fieldset class="m-1">
-            <label for="gameWins" class="col-2">Game Wins(optional):</label>
+            <label for="gameWins" class="col-2">Game Wins:</label>
             <input name="gameWins" id="gameWins" value="<?php echo $gameWins; ?>" />
         </fieldset>
 
         <!-- losses -->
         <fieldset class="m-1">
-            <label for="gameLosses" class="col-2">Game Losses(optional):</label>
+            <label for="gameLosses" class="col-2">Game Losses:</label>
             <input name="gameLosses" id="gameLosses" value="<?php echo $gameLosses; ?>" />
         </fieldset>
 

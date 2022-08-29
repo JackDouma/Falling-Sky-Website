@@ -64,16 +64,15 @@
 
     <!-- section 3 - schedule -->
     <section class="table" id="schedule">
-        <h2 class="container text-center">IGL Game List</h2>
+        <h2 class="container text-center">Upcoming Games</h2>
         <div>
             <table>
                 <thead>
                     <tr>
                         <th>Match</th>
-                        <th>Season</th>
-                        <th>Week</th>
-                        <th>Gamemode</th>
+                        <th>Mode</th>
                         <th>Tier</th>
+                        <th>Time</th>
                         <th>Stream</th>
                         <th>Result</th>
                     </tr>
@@ -126,11 +125,18 @@
                                                     {
                                                         echo 
                                                         '<tr>
-                                                            <td>' . $team['teamName'] . ' VS ' . $game['opponent'] . '</td>
-                                                            <td>' . $season['seasonName'] . '</td>
-                                                            <td>' . $game['week'] . '</td>
+                                                            <td><a href="igl-team-details.php?iglTeamId='. $team['iglTeamId'] . '">' . $team['teamName'] . '</a> VS ' . $game['opponent'] . '</td>
                                                             <td>' . $team['mode'] . '</td>
                                                             <td>' . $team['tier'] . '</td>';
+
+                                                            if (!empty($game['time']))
+                                                            {
+                                                                echo '<td>' . $game['time'] .' </td>';
+                                                            }
+                                                            else
+                                                            {
+                                                                echo '<td>TBD</td>';
+                                                            }
 
                                                             if (!empty($game['stream']))
                                                             {
@@ -140,7 +146,7 @@
                                                             }
                                                             else
                                                             {
-                                                                echo '<td>No Stream</td>';
+                                                                echo '<td>N/A</td>';
                                                             }
 
                                                             if ($game['gameWins'] > 0 || $game['gameLosses'] > 0)
