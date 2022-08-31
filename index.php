@@ -64,7 +64,7 @@
 
     <!-- section 3 - schedule -->
     <section class="table" id="schedule">
-        <h2 class="container text-center">Upcoming Games</h2>
+        <h2 class="container text-center">IGL Games this Week</h2>
         <div>
             <table>
                 <thead>

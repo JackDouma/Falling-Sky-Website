@@ -50,6 +50,17 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
     margin-left: auto;
     margin-right: auto;
 }
+.textbox > h6
+{
+    font-size: 22px;
+    color: #ff0b51;
+    display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline;
+    font-style: italic;
+}
 
 .textbox > div
 {
@@ -106,19 +117,16 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
 {
     text-align: center;
     width: 100%;
-}
-.table > div > table
-{
     color: #ff0b51; 
 }
 .table > div > table > thead > tr > th
 {
-    color: #ff0b51; 
+    border:4px solid #ff0b51;
     font-size: 32px;
 }
 .table > div > table > tbody > tr > td
 {
-    color: #ff0b51; 
+    border:2px solid #ff0b51;
     font-size: 22px;
     padding: 12px;
 }
@@ -159,6 +167,7 @@ button:hover
         padding: 1px 3px;
     }
 }
+
 /**********/
 /* HEADER */
 /**********/
@@ -172,7 +181,6 @@ button:hover
 {
     color: #B90E0A
 }
-
 body > nav > ul > li > a
 {
     font-size: 40px;
@@ -186,14 +194,12 @@ body > nav > ul > li > a
     text-decoration: none;
     transition: .5s ease-in-out;
 }
-
 body > nav > ul > li > img
 {
     height: 125px;
     width: auto;
     padding: 0px 2px;
 }
-
 /************/
 /*   home   */
 /************/
@@ -558,7 +564,10 @@ body > nav > ul > li > img
     {
         font-size: 26px;
     }
-
+    .textbox > h6
+    {
+        font-size: 12px;
+    }
     .textbox > div
     {
         width: 275px;

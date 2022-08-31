@@ -90,77 +90,107 @@
     <!-- section 2 - BLCS -->
     <section class="textbox">
         <h2>BLCS</h2>
+        <h6 onclick="showBLCS()">Show/Hide Table</h6>
         <div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
     </section>
-
-    <section class="table">
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Match</th>
-                        <th>Description</th>
-                        <th>Date & Time</th>
-                        <th>Stream</th>
-                        <th>Result</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Falling Sky Esports VS Uncaged Gaming</td>
-                        <td>Stage 1 Week 1</td>
-                        <td>June 23rd, 9pm EST</td>
-                        <td><a href="https://www.twitch.tv/thebrambo" id="stream link" target="_blank">TheBrambo</a></td>
-                        <td>3-0 W</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS MPG Homed Honeydews</td>
-                        <td>Stage 1 Week 2</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS Disconnect Purple</td>
-                        <td>Stage 1 Week 3</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS Inferno Esports</td>
-                        <td>Stage 1 Week 4</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS 999 Gaming</td>
-                        <td>Stage 1 Week 5</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS Unified Elite</td>
-                        <td>Stage 1 Week 6</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                    <tr>
-                        <td>Falling Sky Esports VS 15 Bean Soup</td>
-                        <td>Stage 1 Week 7</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                        <td>TBD</td>
-                    </tr>
-                </tbody>
-            </table> 
-        </div>          
-    </section>
+    <div id="BLCS">                   
+        <section class="table">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Match</th>
+                            <th>Description</th>
+                            <th>Date & Time</th>
+                            <th>Stream</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Falling Sky Esports VS Uncaged Gaming</td>
+                            <td>Stage 1 Week 1</td>
+                            <td>June 23rd, 9pm EST</td>
+                            <td><a href="https://www.twitch.tv/thebrambo" id="stream link" target="_blank">TheBrambo</a></td>
+                            <td>3-0 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS MPG Homed Honeydews</td>
+                            <td>Stage 1 Week 2</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-0 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS Disconnect Purple</td>
+                            <td>Stage 1 Week 3</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>2-3 L</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS Inferno Esports</td>
+                            <td>Stage 1 Week 4</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-2 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS 999 Gaming</td>
+                            <td>Stage 1 Week 5</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>0-3 L</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS Unified Elite</td>
+                            <td>Stage 1 Week 6</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-1 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS 15 Bean Soup</td>
+                            <td>Stage 1 Week 7</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-2 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS Silly Geese</td>
+                            <td>Stage 2 Week 1</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-2 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS Distinct Savants</td>
+                            <td>Stage 2 Week 1</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>3-2 W</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS 15 Bean Soup</td>
+                            <td>Stage 2 Week 2</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>0-3 L</td>
+                        </tr>
+                        <tr>
+                            <td>Falling Sky Esports VS MPG Rebal</td>
+                            <td>Stage 2 Week 2</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>TBD</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>          
+        </section>
+    </div> 
 </body>
 <?php
     require 'includes/footer.php';
