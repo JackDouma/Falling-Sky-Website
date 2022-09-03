@@ -488,6 +488,10 @@ body > nav > ul > li > img
 /* row one */
 .pd-row-one
 {
+    grid-template-columns: repeat(2, 50%);
+    display: grid;
+    column-gap: auto;
+    justify-content: center;
     background-color: #240d30;
     overflow: hidden;
 }
@@ -510,8 +514,13 @@ body > nav > ul > li > img
 }
 .pd-row-one > div > div > h5
 {
-    font-size: 30px;
+    font-size: 28px;
     color: #ff0b51;
+    text-align: left;
+}
+.pd-row-one > div > div > h6
+{
+    font-size: 22px;
     text-align: left;
 }
 
@@ -762,6 +771,10 @@ body > nav > ul > li > img
         text-align: center;
     }
     /* player details row one */
+    .pd-row-one
+    {
+        grid-template-columns: repeat(1, 100%);
+    }
     .pd-row-one > div
     {
         width: 300px;
@@ -774,5 +787,9 @@ body > nav > ul > li > img
     .pd-row-one > div > div > h5
     {
         font-size: 20px;
+    }
+    .pd-row-one > div > div > h6
+    {
+        font-size: 12px;
     }
 }
