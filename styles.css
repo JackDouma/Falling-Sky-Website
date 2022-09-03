@@ -7,6 +7,11 @@ h1, h2, h3, h4, h5, h6, p, a, li, th, fieldset
 }
 .new-section
 {
+    background-color: #240d30;
+    padding: 40px 0px;
+}
+.new-section > div
+{
     background-color: #ff0b51;
     width: auto;
     height: 15px;
@@ -262,9 +267,19 @@ body > nav > ul > li > img
     height: 50px;
     width: auto;
 }
+
+/* row two */
+.s-row-two
+{
+    background-color: #240d30; 
+    grid-template-columns: repeat(3, 33%);
+    display: grid;
+    column-gap: auto;
+    justify-content: center;
+}
 .s-row-two > div
 {
-    width: 750px;
+    width: 500px;
     border: 15px solid #ff0b51;
     background-color: #240d30;
     padding: 50px;
@@ -272,34 +287,45 @@ body > nav > ul > li > img
     margin-left: auto;
     margin-right: auto;
 }
-.s-row-two > div > p
-{
-    color:#ff0b51;
-}
-
-/* row one */
-.s-row-three
-{
-    background-color: #240d30;
-    grid-template-columns: repeat(2, 50%);
-    display: grid;
-    column-gap: auto;
-    justify-content: center;
-}
-.s-row-three > div > h3
+.s-row-two > div > h3
 {
     font-size: 40px;
     text-align: center;
 }
-.s-row-three > div > h6
+.s-row-two > div > p
 {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     font-style: italic;
 }
-.s-row-three > div > form > fieldset
+
+/* apply */
+.apply
+{
+    background-color: #240d30;
+}
+.apply > div > form > fieldset
 {
     font-size: 22px;
+}
+
+.apply-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+}
+.apply-button > div > button
+{
+    border-radius: 10%;
+    padding: 20px 20px;
+}
+.apply-button > div > button > a
+{
+    font-size: 36px;
+    text-decoration: none;
+    color: white;
 }
 
 /**************/
@@ -524,7 +550,15 @@ body > nav > ul > li > img
     text-align: left;
 }
 
-
+.settings
+{
+    background-color: #240d30;
+}
+.settings > a
+{
+    text-decoration: none;
+    color: #ff0b51;
+}
 .login
 {
     background-color: #240d30;
@@ -549,9 +583,19 @@ body > nav > ul > li > img
     {
         height: 50px;
     }
+    /* button */
+    button
+    {
+        font-size: 14px;
+        padding: 1px 3px;
+    }
     /* new section */
     .new-section
     {
+        padding: 20px 0px;
+    }
+    .new-section > div
+    {     
         height: 10px;
     }
     /* h2 */
@@ -601,21 +645,17 @@ body > nav > ul > li > img
     {
         font-size: 20px;
     }
-    .table
-    {
-        background-color: #240d30; 
-    }
     .table > h2
     {
         font-size: 20px;
     }
     .table > div > table > thead > tr > th
     {
-        font-size: 15px;
+        font-size: 13px;
     }
     .table > div > table > tbody > tr > td
     {
-        font-size: 10px;
+        font-size: 9px;
         padding: 8px;
     }
     /* staff row one */
@@ -640,48 +680,41 @@ body > nav > ul > li > img
     {
         font-size: 30px;
     }
-
-    .s-row-two > div
-    {
-        width: 350px;
-        padding: 25px;
-    }
-    .s-row-two > p
-    {
-        font-size: 16px;
-    }
-
     /* staff row three */
-    .s-row-three
+    .s-row-two
     {
         grid-template-columns: repeat(1, 100%);
     }
-    .s-row-three > div > h3
+    .s-row-two > div > h3
     {
         font-size: 25px;
     }
-    .s-row-three > div
+    .s-row-two > div
     {
-        width: 300px;
         padding: 15px;
+        width: 275px;
+        border: 10px solid #ff0b51;
     }
-    .s-row-three > div > h6
+    .s-row-two > div > p
     {
-        font-size: 20px;
+        font-size: 14px;
     }
-    .s-row-three > div > form > fieldset
+    .apply > div > form > fieldset
     {
         font-size: 10px;
     }
-    /* staff row four */
-    .s-row-four > h3
+    /* apply button */
+    .apply-button
     {
-        font-size: 25px;
+        padding: 20px 0px;
     }
-    .s-row-four > form > div > button
+    .apply-button > div > button
     {
-        font-size: 16px;
-        padding: 1px 3px;
+        padding: 14px 14px;
+    }
+    .apply-button > div > button > a
+    {
+        font-size: 22px;
     }
 
     /* rocket league titles */

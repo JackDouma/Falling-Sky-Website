@@ -9,7 +9,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
 
         <title>Falling Sky | <?php echo $title; ?></title>
-    
+        <link rel="icon" href="img\star.png">
+
         <!-- css -->
         <link rel="stylesheet" href="styles.css">
         <!-- bootstrap -->

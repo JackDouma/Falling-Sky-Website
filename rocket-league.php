@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
     <!-- section 1 - main roster 
     <section class="rh-h2-1">
         <h2>Main Roster</h2>
@@ -56,7 +56,7 @@
                             require 'includes/db.php';
 
                             // get table
-                            $sql = "SELECT * FROM seasons";
+                            $sql = "SELECT * FROM seasons ORDER BY seasonId DESC";
                             $cmd = $db->prepare($sql);
                             $cmd->execute();
                             $seasons = $cmd->fetchAll();
@@ -85,7 +85,7 @@
         </div>         
     
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
 
     <!-- section 2 - BLCS -->
     <section class="textbox">

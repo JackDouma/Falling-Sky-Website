@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
 
     <!-- section 1 - about -->
     <section class="textbox">
@@ -25,7 +25,7 @@
         </div>           
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
 
     <!-- section 2 - how to join-->
     <section class="textbox">
@@ -36,7 +36,7 @@
         </div>           
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
     
     <!-- section 3 - watch our games-->
     <section class="textbox">
@@ -51,7 +51,7 @@
         </video>      
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
 
     <!-- section 2 - decal-->
     <section class="textbox">
@@ -60,7 +60,7 @@
         <a href="file/Falling_Sky_Octane_Decal.zip" download="Falling_Sky_Octane_Decal.zip">Download</a>
     </section>
 
-    <div class="new-section"></div>
+    <div class="new-section"><div></div></div>
 
     <!-- section 3 - schedule -->
     <section class="table" id="schedule">
@@ -176,7 +176,7 @@
                 </tbody>
             </table>
         </div>
-    </section>
+    <!-- </section> | this somehow stops a margin from appearing somehow, hopefully this doesn't break anything else Calculated.-->
 </body>
 <?php
     require 'includes/footer.php';

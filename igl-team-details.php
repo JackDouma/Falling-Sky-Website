@@ -230,7 +230,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -252,7 +253,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -274,7 +276,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -296,7 +299,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -318,7 +322,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -340,7 +345,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -376,7 +382,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -398,7 +405,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }
@@ -420,7 +428,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
 
                                 // determine if there's a 3rd place or 1st place match
@@ -452,7 +461,8 @@
                                 echo '</div>';
                                 if($loggedIn)
                                 {
-                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit</a>';
+                                    echo '<a href="add-igl-game.php?scheduleId=' . $game['scheduleId'] . '">Edit  </a>';
+                                    echo '<a href="delete-igl-game.php?scheduleId=' . $game['scheduleId'] . '" onclick="return confirmDelete()">Delete</a>';
                                 }
                             }
                         }

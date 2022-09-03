@@ -9,7 +9,7 @@
     </div>
 </section>
 
-<div class="new-section"></div>
+<div class="new-section"><div></div></div>
 
 <!-- our staff -->
 <section class="h2">
@@ -56,7 +56,7 @@
     </div>               
 </section>
 
-<div class="new-section"></div>
+<div class="new-section"><div></div></div>
 
 <!-- join the staff -->
 <section class="textbox">
@@ -69,54 +69,31 @@
 <!-- apply -->
 <section class="h2">
     <div>
-        <h2>Apply</h2>
+        <h2>Available Positions</h2>
     </div>
 </section>
 
-<section class="s-row-three">
+<section class="s-row-two">
     <div>
-        <h3>Available Positions</h3>
-        <h6>Temp1</h6>
-        <h6>Temp2</h6>
-        <h6>Temp3</h6>
+        <h3>Temp1</h3>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
     </div>
-
     <div>
-        <form method="post" action="save-app.php">
-            <!-- name -->
-            <fieldset class="m-1">
-                <label for="name" class="col-3">Name:</label>
-                <input name="name" id="name"/>
-            </fieldset>
-            <!-- email -->
-            <fieldset class="m-1">
-                <label for="contact" class="col-3">Contact:</label>
-                <input name="contact" id="contact" placeholder="Email, Discord, etc" />
-            </fieldset>
-
-            <!-- job/subject -->
-            <fieldset class="m-1">
-                <label for="position" class="col-3">Position:</label>
-                <select id="position" name="position">
-                    <option value="temp1">temp1</option>
-                    <option value="temp2">temp2</option>
-                    <option value="temp3">temp3</option>
-                </select>
-            </fieldset>
-
-            <fieldset class="m-1">
-                <label for="experience" class="col-3">Experience:</label>
-                <input name="experience" id="experience"  placeholder="Optional">
-            </fieldset>
-        
-
-            <!-- confirm button that also checks to make sure password and confirm is same -->
-            <div class="offset-2">
-                <button>Send</button>
-            </div>
-        </form>
+        <h3>Temp2</h3>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+    </div>
+    <div>
+        <h3>Temp3</h3>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
     </div>
 </section>
+
+<section class="apply-button">
+    <div>
+        <button><a href="apply.php">Apply Here</a></button>
+    </div>
+</section>
+
 </body>
 <?php
     require 'includes/footer.php';

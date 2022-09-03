@@ -184,7 +184,7 @@
                                         {
                                             echo '<div>';                                               
                                                 echo '<h6><em>';
-                                                    echo $team['teamName'] . ' VS ' . $playerGame['opponent'];
+                                                    echo '<a href="igl-team-details.php?iglTeamId='. $team['iglTeamId'] . '">' . $team['teamName'] . '</a> VS ' . $playerGame['opponent'];
                                                 echo '</em></h6>';
                                                 echo '<h6>';
                                                     if ($playerGame['time'] == NULL)
@@ -241,13 +241,13 @@
                         {
                             if($team['iglTeamId'] == $playerGame['iglTeamId'])
                             {
-                                if($recentGames < 10)
+                                if($recentGames < 8)
                                 {
                                     if($playerGame['gameWins'] > 0 || $playerGame['gameLosses'] > 0)
                                     {
                                         echo '<div>';                                               
                                             echo '<h6><em>';
-                                                echo $team['teamName'] . ' VS ' . $playerGame['opponent'];
+                                                echo '<a href="igl-team-details.php?iglTeamId='. $team['iglTeamId'] . '">' . $team['teamName'] . '</a> VS ' . $playerGame['opponent'];
                                             echo '</em></h6>';
                                             echo '<h6>';
                                                 echo 'Result: ' . $playerGame['gameWins'] . '-' . $playerGame['gameLosses'];
